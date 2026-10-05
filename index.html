@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="utf8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>سياسة الخصوصية - مساعد الطباعة الذكي</title>
-<meta name="description" content="سياسة الخصوصية لمنتج مساعد الطباعة الذكي">
+<title>سياسة الخصوصية - مساعد الطباعة الذكي | Privacy Policy - Smart Print Assistant</title>
+<meta name="description" content="سياسة الخصوصية لمساعد الطباعة الذكي - Privacy policy for Smart Print Assistant – Print from WhatsApp Web">
 <style>
   :root{
     --bg:#f7f8fa; --panel:#ffffff; --text:#1c2b33; --text-2:#5c6b73;
@@ -20,20 +20,29 @@
   body{
     margin:0; background:var(--bg); color:var(--text);
     font-family:'Segoe UI', Tahoma, Arial, sans-serif;
-    direction:rtl; padding-inline:16px; padding-block:32px;
+    padding-inline:16px; padding-block:32px;
   }
   .wrap{ max-width:760px; margin:0 auto; }
   .doc{
+    position:relative;
     background:var(--panel); border:1px solid var(--border);
     border-radius:14px; padding:32px clamp(18px,5vw,44px);
   }
-  h1{ font-size:clamp(22px,4vw,30px); margin:0 0 6px; }
+  .lang-btn{
+    position:absolute; top:16px; inset-inline-end:16px;
+    min-width:40px; height:34px; padding:0 10px;
+    border:1px solid var(--border); border-radius:8px;
+    background:var(--bg); color:var(--text); cursor:pointer;
+    font:700 13px/1 'Segoe UI', Tahoma, Arial, sans-serif;
+  }
+  .lang-btn:hover{ border-color:var(--accent); color:var(--accent); }
+  .lang-btn.to-ar{ font-size:17px; }
+  h1{ font-size:clamp(22px,4vw,30px); margin:0 0 6px; padding-inline-end:56px; }
   .subtitle{ color:var(--text-2); font-size:14px; margin-bottom:28px; }
   h2{
     font-size:18px; margin:32px 0 10px;
     padding-inline-start:12px; border-inline-start:3px solid var(--accent);
   }
-  h2:first-of-type{ margin-top:0; }
   p, li{ font-size:14.5px; line-height:1.9; color:var(--text); }
   p{ margin:0 0 12px; }
   ul{ margin:0 0 12px; padding-inline-start:22px; }
@@ -51,79 +60,195 @@
   }
   .callout b{ color:var(--accent); }
   table{ width:100%; border-collapse:collapse; margin:10px 0 18px; font-size:13.5px; }
-  th,td{ text-align:right; padding:9px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+  th,td{ text-align:start; padding:9px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
   th{ color:var(--text-2); font-weight:700; white-space:nowrap; }
   .contact{ display:flex; flex-direction:column; gap:6px; margin-top:6px; }
   .contact a{ color:var(--accent); text-decoration:none; font-size:14.5px; }
   .contact a:hover{ text-decoration:underline; }
+  .ltr{ direction:ltr; unicode-bidi:embed; }
   .updated{ text-align:center; color:var(--text-2); font-size:12.5px; margin-top:22px; }
+  [hidden]{ display:none !important; }
 </style>
 </head>
 <body>
 <div class="wrap">
   <div class="doc">
-    <h1>سياسة الخصوصية</h1>
-    <div class="subtitle">مساعد الطباعة الذكي</div>
+    <button type="button" id="lang-btn" class="lang-btn" aria-label="Switch language">EN</button>
 
-    <div class="badge-row">
-      <span class="badge">⚙ معالجة محلية بالكامل</span>
-      <span class="badge">🚫 لا بيع بيانات</span>
-      <span class="badge">🗑 حذف تلقائي بعد ٩٠ يوماً</span>
-    </div>
+    <!-- ═══════════════ العربية ═══════════════ -->
+    <article id="ar" lang="ar" dir="rtl">
+      <h1>سياسة الخصوصية</h1>
+      <div class="subtitle">مساعد الطباعة الذكي - اطبع من واتساب ويب</div>
 
-    <div class="callout">
-      <b>الخلاصة:</b> ملفاتك وصورك لا تغادر جهازك أبداً. الخادم الخارجي يستقبل فقط بيانات تقنية محدودة تخص التفعيل والاشتراك، ولا يصل إطلاقاً إلى محتوى ملفاتك أو محادثاتك.
-    </div>
+      <div class="badge-row">
+        <span class="badge">⚙ معالجة محلية بالكامل</span>
+        <span class="badge">🚫 لا بيع بيانات</span>
+        <span class="badge">🗑 حذف تلقائي بعد ٩٠ يوماً</span>
+      </div>
 
-    <h2>1. مزوّد الخدمة</h2>
-    <p>
-      هذا المنتج ("مساعد الطباعة الذكي") مُقدَّم ومُدار من <b>مكتبة سريع الدعم — تبوك، المملكة العربية السعودية</b>. لأي استفسار متعلق بهذه السياسة أو ببيانات حسابك، يمكن التواصل عبر:
-    </p>
-    <div class="contact">
-      <a href="https://wa.me/966547984534" target="_blank" rel="noopener">واتساب: 966547984534</a>
-      <a href="https://wa.me/966571877751" target="_blank" rel="noopener">واتساب: 966571877751</a>
-      <a href="mailto:aldms7751@gmail.com">البريد: aldms7751@gmail.com</a>
-    </div>
+      <div class="callout">
+        <b>الخلاصة:</b> ملفاتك وصورك لا تغادر جهازك أبداً. الخادم الخارجي يستقبل فقط بيانات تقنية محدودة تخص التفعيل والاشتراك، ولا يصل إطلاقاً إلى محتوى ملفاتك أو محادثاتك.
+      </div>
 
-    <h2>2. الملفات والصور لا تغادر جهازك</h2>
-    <p>
-      جميع الملفات والصور والمستندات التي تتم معالجتها أو طباعتها تبقى محلياً على جهاز المستخدم فقط. تتم المعالجة والطباعة عبر خدمة تعمل على نفس الجهاز (127.0.0.1)، ولا تُرفَع أو تُرسَل أي ملفات أو صور إلى أي خادم خارجي تحت أي ظرف.
-    </p>
-    <p>
-      تُحفَظ هذه الملفات مؤقتاً في مجلد محلي خاص بالإضافة داخل مجلد التنزيلات على جهاز المستخدم، تمهيداً لمعالجتها أو طباعتها، ولا يصل إليها أي طرف آخر غير المستخدم نفسه.
-    </p>
+      <h2>1. مزوّد الخدمة</h2>
+      <p>
+        هذا المنتج ("مساعد الطباعة الذكي - اطبع من واتساب ويب") مُقدَّم ومُدار من <b>مكتبة سريع الدعم — تبوك، المملكة العربية السعودية</b>. لأي استفسار متعلق بهذه السياسة أو ببيانات حسابك، يمكن التواصل عبر:
+      </p>
+      <div class="contact">
+        <a href="https://wa.me/966547984534" target="_blank" rel="noopener">واتساب: <span class="ltr">966547984534</span></a>
+        <a href="https://wa.me/966571877751" target="_blank" rel="noopener">واتساب: <span class="ltr">966571877751</span></a>
+        <a href="mailto:aldms7751@gmail.com">البريد: <span class="ltr">aldms7751@gmail.com</span></a>
+      </div>
 
-    <h2>3. البيانات التي تُرسَل إلى الخادم وسبب إرسالها</h2>
-    <p>لتفعيل الاشتراك والتحقق من صلاحيته فقط، تُرسَل البيانات التقنية التالية إلى خادم التفعيل:</p>
-    <table>
-      <tr><th>البيان</th><th>سبب الإرسال</th></tr>
-      <tr><td>معرّف الجهاز (Device Fingerprint)</td><td>لربط الاشتراك بالجهاز والحدّ من عدد الأجهزة المسموح بها لكل كود</td></tr>
-      <tr><td>وقت التفعيل</td><td>حساب بداية ونهاية صلاحية الاشتراك، وتتبع تاريخ الأنشطة على الحساب</td></tr>
-      <tr><td>عنوان IP</td><td>حماية النظام من إساءة الاستخدام ومحاولات مشاركة كود واحد على نطاق واسع غير مصرَّح به</td></tr>
-    </table>
-    <p>
-      هذه البيانات التقنية منفصلة تماماً عن ملفاتك ومحادثاتك، ولا تتضمن أي محتوى من الملفات أو الصور أو المراسلات.
-    </p>
+      <h2>2. الملفات والصور لا تغادر جهازك</h2>
+      <p>
+        جميع الملفات والصور والمستندات التي تتم معالجتها أو طباعتها تبقى محلياً على جهاز المستخدم فقط. تتم المعالجة والطباعة عبر خدمة تعمل على نفس الجهاز (<span class="ltr">127.0.0.1</span>)، ولا تُرفَع أو تُرسَل أي ملفات أو صور إلى أي خادم خارجي تحت أي ظرف.
+      </p>
+      <p>
+        تُحفَظ هذه الملفات مؤقتاً في مجلد محلي خاص بالإضافة داخل مجلد التنزيلات على جهاز المستخدم، تمهيداً لمعالجتها أو طباعتها، ولا يصل إليها أي طرف آخر غير المستخدم نفسه.
+      </p>
 
-    <h2>4. مدة الاحتفاظ بالبيانات</h2>
-    <p>
-      يُحتفَظ ببيانات التفعيل المذكورة أعلاه طوال فترة الاشتراك النشط. بعد إلغاء الاشتراك أو انتهائه، تُحذَف هذه البيانات نهائياً من خادم التفعيل بعد مرور <b>٩٠ يوماً</b> من تاريخ الإلغاء أو الانتهاء.
-    </p>
+      <h2>3. البيانات التي تُرسَل إلى الخادم وسبب إرسالها</h2>
+      <p>لتفعيل الاشتراك والتحقق من صلاحيته فقط، تُرسَل البيانات التقنية التالية إلى خادم التفعيل:</p>
+      <table>
+        <tr><th>البيان</th><th>سبب الإرسال</th></tr>
+        <tr><td>كود الاشتراك</td><td>التحقق من صحة الاشتراك وصلاحيته</td></tr>
+        <tr><td>معرّف الجهاز (Device Fingerprint)</td><td>لربط الاشتراك بالجهاز والحدّ من عدد الأجهزة المسموح بها لكل كود</td></tr>
+        <tr><td>وقت التفعيل</td><td>حساب بداية ونهاية صلاحية الاشتراك، وتتبع تاريخ الأنشطة على الحساب</td></tr>
+        <tr><td>عدد أوامر الطباعة (رقم فقط)</td><td>احتساب الاستخدام ضمن الاشتراك؛ لا يتضمن أسماء الملفات أو محتواها</td></tr>
+        <tr><td>عنوان IP</td><td>حماية النظام من إساءة الاستخدام ومحاولات مشاركة كود واحد على نطاق واسع غير مصرَّح به</td></tr>
+      </table>
+      <p>
+        هذه البيانات التقنية منفصلة تماماً عن ملفاتك ومحادثاتك، ولا تتضمن أي محتوى من الملفات أو الصور أو المراسلات.
+      </p>
 
-    <h2>5. مشاركة البيانات مع أطراف ثالثة</h2>
-    <ul>
-      <li>لا تُباع بيانات المستخدمين لأي طرف ثالث تحت أي ظرف.</li>
-      <li>لا تُشارَك البيانات التقنية (معرّف الجهاز، وقت التفعيل، عنوان IP) مع أي جهة خارجية.</li>
-      <li>لا تُستخدَم البيانات لأي غرض خارج نطاق تفعيل الاشتراك والتحقق منه وحماية النظام من إساءة الاستخدام.</li>
-    </ul>
+      <h2>4. البلاغات التقنية الاختيارية</h2>
+      <p>
+        إذا اخترت بنفسك إرسال بلاغ تقني من داخل الإضافة، يُرسَل إلى خادم الدعم ما تكتبه في نموذج البلاغ فقط: العنوان والوصف ورقم الجوال للتواصل معك والاسم إن أدخلته، وأي مرفقات تختار إرفاقها بنفسك، مع كود الاشتراك ومعرّف الجهاز. يُستخدم ذلك لمعالجة المشكلة والتواصل معك بشأنها فقط، ولا يُرسَل أي بلاغ دون أن تضغط زر الإرسال.
+      </p>
 
-    <h2>6. حقوق المستخدم</h2>
-    <p>
-      يمكنك طلب حذف بيانات التفعيل الخاصة بك في أي وقت عبر التواصل مع مزوّد الخدمة أعلاه. إزالة المنتج من جهازك توقف فوراً أي اتصال مستقبلي بخادم التفعيل.
-    </p>
+      <h2>5. مدة الاحتفاظ بالبيانات</h2>
+      <p>
+        يُحتفَظ ببيانات التفعيل المذكورة أعلاه طوال فترة الاشتراك النشط. بعد إلغاء الاشتراك أو انتهائه، تُحذَف هذه البيانات نهائياً من خادم التفعيل بعد مرور <b>٩٠ يوماً</b> من تاريخ الإلغاء أو الانتهاء.
+      </p>
 
-    <div class="updated">آخر تحديث: سبتمبر 2026</div>
+      <h2>6. مشاركة البيانات مع أطراف ثالثة</h2>
+      <ul>
+        <li>لا تُباع بيانات المستخدمين لأي طرف ثالث تحت أي ظرف.</li>
+        <li>لا تُشارَك البيانات التقنية أو بيانات البلاغات مع أي جهة خارجية.</li>
+        <li>لا تُستخدَم البيانات لأي غرض خارج نطاق تفعيل الاشتراك والتحقق منه، والدعم الفني، وحماية النظام من إساءة الاستخدام.</li>
+      </ul>
+
+      <h2>7. حقوق المستخدم</h2>
+      <p>
+        يمكنك طلب حذف بيانات التفعيل أو البلاغات الخاصة بك في أي وقت عبر التواصل مع مزوّد الخدمة أعلاه. إزالة المنتج من جهازك توقف فوراً أي اتصال مستقبلي بخادم التفعيل.
+      </p>
+
+      <div class="updated">آخر تحديث: أكتوبر 2026</div>
+    </article>
+
+    <!-- ═══════════════ English ═══════════════ -->
+    <article id="en" lang="en" dir="ltr" hidden>
+      <h1>Privacy Policy</h1>
+      <div class="subtitle">Smart Print Assistant – Print from WhatsApp Web</div>
+
+      <div class="badge-row">
+        <span class="badge">⚙ Fully local processing</span>
+        <span class="badge">🚫 We never sell data</span>
+        <span class="badge">🗑 Deleted automatically after 90 days</span>
+      </div>
+
+      <div class="callout">
+        <b>In short:</b> your files and photos never leave your computer. Our server receives only limited technical data related to activation and your subscription, and it never has access to the content of your files or chats.
+      </div>
+
+      <h2>1. Service provider</h2>
+      <p>
+        This product ("Smart Print Assistant – Print from WhatsApp Web") is provided and operated by <b>Saree Al-Daam Library — Tabuk, Saudi Arabia</b>. For any question about this policy or your account data, contact us:
+      </p>
+      <div class="contact">
+        <a href="https://wa.me/966547984534" target="_blank" rel="noopener">WhatsApp: 966547984534</a>
+        <a href="https://wa.me/966571877751" target="_blank" rel="noopener">WhatsApp: 966571877751</a>
+        <a href="mailto:aldms7751@gmail.com">Email: aldms7751@gmail.com</a>
+      </div>
+
+      <h2>2. Your files and photos stay on your computer</h2>
+      <p>
+        All files, photos and documents that are processed or printed stay on the user's computer only. Processing and printing are handled by a service running on the same computer (127.0.0.1). No file or photo is ever uploaded or sent to any external server.
+      </p>
+      <p>
+        These files are stored temporarily in a local folder that belongs to the extension inside the user's Downloads folder, ready to be processed or printed. No one other than the user has access to them.
+      </p>
+
+      <h2>3. Data sent to our server, and why</h2>
+      <p>Only to activate your subscription and check that it is valid, the following technical data is sent to the activation server:</p>
+      <table>
+        <tr><th>Data</th><th>Why it is sent</th></tr>
+        <tr><td>Subscription code</td><td>To verify that the subscription is genuine and active</td></tr>
+        <tr><td>Device identifier (device fingerprint)</td><td>To link the subscription to the device and limit the number of devices allowed per code</td></tr>
+        <tr><td>Activation time</td><td>To calculate when the subscription starts and ends, and to keep a history of account activity</td></tr>
+        <tr><td>Number of print jobs (a count only)</td><td>To measure usage under the subscription; it never includes file names or content</td></tr>
+        <tr><td>IP address</td><td>To protect the system from abuse and from one code being shared widely without permission</td></tr>
+      </table>
+      <p>
+        This technical data is completely separate from your files and chats, and it never includes any content from your files, photos or messages.
+      </p>
+
+      <h2>4. Optional technical reports</h2>
+      <p>
+        If you choose to send a technical report from inside the extension, only what you enter in the report form is sent to our support server: the title, the description, your phone number so we can reach you, your name if you enter it, and any attachments you choose to add, together with your subscription code and device identifier. This is used only to fix the problem and contact you about it. No report is ever sent unless you press the send button.
+      </p>
+
+      <h2>5. How long we keep data</h2>
+      <p>
+        The activation data described above is kept for as long as your subscription is active. After the subscription is cancelled or expires, this data is permanently deleted from the activation server <b>90 days</b> after the cancellation or expiry date.
+      </p>
+
+      <h2>6. Sharing with third parties</h2>
+      <ul>
+        <li>User data is never sold to any third party.</li>
+        <li>Technical data and report data are not shared with any outside party.</li>
+        <li>Data is not used for any purpose other than activating and verifying the subscription, technical support, and protecting the system from abuse.</li>
+      </ul>
+
+      <h2>7. Your rights</h2>
+      <p>
+        You can ask us to delete your activation or report data at any time by contacting the service provider above. Removing the product from your computer immediately stops any further connection to the activation server.
+      </p>
+
+      <div class="updated">Last updated: October 2026</div>
+    </article>
   </div>
 </div>
+<script>
+(function () {
+  var KEY = 'privacy_lang';
+  function pick() {
+    var q = /[?&]lang=(ar|en)\b/.exec(location.search);
+    if (q) return q[1];
+    try { var s = localStorage.getItem(KEY); if (s === 'ar' || s === 'en') return s; } catch (e) {}
+    return /^ar\b/i.test(navigator.language || '') ? 'ar' : 'en';
+  }
+  var btn = document.getElementById('lang-btn');
+  function show(lang) {
+    var ar = lang === 'ar';
+    document.getElementById('ar').hidden = !ar;
+    document.getElementById('en').hidden = ar;
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ar ? 'rtl' : 'ltr';
+    document.title = ar ? 'سياسة الخصوصية - مساعد الطباعة الذكي' : 'Privacy Policy - Smart Print Assistant';
+    btn.textContent = ar ? 'EN' : 'ع';
+    btn.className = 'lang-btn' + (ar ? '' : ' to-ar');
+    btn.setAttribute('aria-label', ar ? 'Switch to English' : 'التبديل إلى العربية');
+  }
+  var cur = pick();
+  show(cur);
+  btn.addEventListener('click', function () {
+    cur = cur === 'ar' ? 'en' : 'ar';
+    try { localStorage.setItem(KEY, cur); } catch (e) {}
+    show(cur);
+  });
+})();
+</script>
 </body>
 </html>
