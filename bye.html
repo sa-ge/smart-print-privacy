@@ -122,7 +122,7 @@
 <script>
 (function () {
   var API = 'https://api.alhe22lali.cfd/api/ext/uninstall-feedback';
-  var STORE_URL = '';                 // رابط الإضافة في متجر Chrome: يظهر زر «إعادة التثبيت» عند تعبئته بعد نشرها
+  var STORE_URL = 'https://chromewebstore.google.com/detail/print-whatsapp-web-files/oapemmjnpbgfnmhgmfohibggfgeafmah';   // رابط الإضافة في متجر Chrome (زر «إعادة التثبيت»؛ فارغ = مخفي)
   var PHONE = '966547984534';
   var REASONS = ['not_working', 'install_hard', 'missing_features', 'price', 'trial_ended', 'alternative', 'temporary', 'no_whatsapp_web', 'other'];
 
@@ -224,7 +224,7 @@
     $('thanks-p').textContent = sent ? t.thanksSent : t.thanksSkip;
     var re = $('reinstall');
     re.hidden = !STORE_URL;
-    if (STORE_URL) re.href = STORE_URL;
+    if (STORE_URL) re.href = STORE_URL + '?hl=' + lang;
     $('contact').href = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(t.waMsg);
     if (busy) $('send').textContent = t.sending;
   }
