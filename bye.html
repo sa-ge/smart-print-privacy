@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>نأسف لمغادرتك - مساعد الطباعة الذكي</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f4f7f6; --panel:#ffffff; --text:#14232b; --text-2:#5a6a72;
+    --border:#e1e8e6; --accent:#0f8a5f; --accent-2:#0b6b4a; --accent-bg:#e6f5ee;
+    --on-accent:#ffffff; --danger:#c0392b; --shadow:0 1px 2px rgba(20,35,43,.05), 0 8px 28px rgba(20,35,43,.07);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0d1315; --panel:#161d20; --text:#eef3f4; --text-2:#9bacb3;
+      --border:#273136; --accent:#3ddc97; --accent-2:#2fbf80; --accent-bg:#12261f;
+      --on-accent:#06241a; --danger:#ff8a7a; --shadow:0 1px 2px rgba(0,0,0,.3), 0 8px 28px rgba(0,0,0,.35);
+    }
+  }
+  *{box-sizing:border-box}
+  body{ margin:0; background:var(--bg); color:var(--text); font-family:'Cairo','Segoe UI',Tahoma,Arial,sans-serif; -webkit-font-smoothing:antialiased; }
+  .wrap{ max-width:640px; margin:0 auto; padding:0 16px 48px; }
+  .topbar{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding-block:18px; }
+  .brand{ display:flex; align-items:center; gap:12px; min-width:0; }
+  .brand img{ width:44px; height:44px; flex:none; }
+  .brand-name{ font-weight:800; font-size:16px; line-height:1.3; }
+  .brand-sub{ font-size:12px; color:var(--text-2); line-height:1.3; }
+  .lang-btn{
+    min-width:42px; height:36px; padding:0 12px; flex:none; border:1px solid var(--border); border-radius:10px;
+    background:var(--panel); color:var(--text); cursor:pointer; font:700 13px/1 'Cairo','Segoe UI',Tahoma,Arial,sans-serif;
+  }
+  .lang-btn:hover{ border-color:var(--accent); color:var(--accent); }
+  .lang-btn.to-ar{ font-size:17px; }
+  .card{ background:var(--panel); border:1px solid var(--border); border-radius:18px; box-shadow:var(--shadow); padding:clamp(20px,5vw,32px); }
+  h1{ margin:0 0 10px; font-size:clamp(24px,5vw,32px); font-weight:800; line-height:1.3; }
+  .lead{ margin:0 0 22px; color:var(--text-2); font-size:15px; line-height:1.9; }
+  h2{ margin:0 0 12px; font-size:16px; font-weight:700; }
+  .reasons{ display:flex; flex-direction:column; gap:8px; margin:0 0 18px; padding:0; border:0; }
+  .reasons label{
+    display:flex; align-items:center; gap:12px; padding:12px 14px; cursor:pointer;
+    border:1px solid var(--border); border-radius:12px; font-size:14.5px; line-height:1.6;
+    transition:border-color .15s, background .15s;
+  }
+  .reasons label:hover{ border-color:var(--accent); }
+  .reasons input{ accent-color:var(--accent); width:18px; height:18px; flex:none; margin:0; }
+  .reasons label:has(input:checked){ border-color:var(--accent); background:var(--accent-bg); }
+  label.field{ display:block; font-weight:600; font-size:14px; margin-bottom:8px; }
+  textarea{
+    width:100%; min-height:96px; resize:vertical; padding:12px 14px; border:1px solid var(--border); border-radius:12px;
+    background:var(--bg); color:var(--text); font:400 14.5px/1.7 'Cairo','Segoe UI',Tahoma,Arial,sans-serif; outline:0;
+  }
+  textarea:focus{ border-color:var(--accent); }
+  .count{ text-align:end; color:var(--text-2); font-size:12px; margin-top:4px; }
+  .actions{ display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
+  .btn{
+    flex:1 1 160px; display:inline-flex; align-items:center; justify-content:center; gap:8px; text-decoration:none; cursor:pointer;
+    padding:13px 18px; border-radius:12px; font:700 15px/1.2 'Cairo','Segoe UI',Tahoma,Arial,sans-serif; border:1px solid var(--border);
+    background:var(--panel); color:var(--text);
+  }
+  .btn.primary{ background:var(--accent); border-color:var(--accent); color:var(--on-accent); }
+  .btn.primary:hover:not(:disabled){ background:var(--accent-2); }
+  .btn:disabled{ opacity:.6; cursor:default; }
+  .btn:hover:not(:disabled):not(.primary){ border-color:var(--accent); color:var(--accent); }
+  .err{ color:var(--danger); font-size:13.5px; margin-top:12px; min-height:1.4em; }
+  .privacy{ color:var(--text-2); font-size:12.5px; line-height:1.8; margin:18px 0 0; text-align:center; }
+  .thanks{ text-align:center; }
+  .thanks .ok{
+    width:60px; height:60px; border-radius:50%; background:var(--accent-bg); color:var(--accent);
+    display:grid; place-items:center; margin:0 auto 14px;
+  }
+  .thanks .ok svg{ width:30px; height:30px; }
+  .thanks .actions{ justify-content:center; }
+  [hidden]{ display:none !important; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="topbar">
+    <div class="brand">
+      <img src="logo.png" alt="" width="44" height="44">
+      <div>
+        <div class="brand-name" data-t="brand"></div>
+        <div class="brand-sub" data-t="brandSub"></div>
+      </div>
+    </div>
+    <button type="button" id="lang-btn" class="lang-btn" aria-label="Switch language">EN</button>
+  </header>
+
+  <main>
+    <form class="card" id="form" novalidate>
+      <h1 data-t="h1"></h1>
+      <p class="lead" data-t="lead"></p>
+      <fieldset class="reasons" id="reasons"><legend hidden data-t="reasonLabel"></legend></fieldset>
+      <label class="field" for="details" data-t="detailsLabel"></label>
+      <textarea id="details" maxlength="1000" data-ph="detailsPh"></textarea>
+      <div class="count"><span id="count">0</span> / 1000</div>
+      <div class="err" id="err" role="alert"></div>
+      <div class="actions">
+        <button type="submit" class="btn primary" id="send" data-t="send"></button>
+        <button type="button" class="btn" id="skip" data-t="skip"></button>
+      </div>
+      <p class="privacy" data-t="privacy"></p>
+    </form>
+
+    <div class="card thanks" id="thanks" hidden>
+      <div class="ok"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h1 id="thanks-h" data-t="thanksH"></h1>
+      <p class="lead" id="thanks-p"></p>
+      <div class="actions">
+        <a class="btn primary" id="reinstall" href="#" target="_blank" rel="noopener" hidden data-t="reinstall"></a>
+        <a class="btn" id="contact" href="#" target="_blank" rel="noopener" data-t="contact"></a>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+(function () {
+  var API = 'https://api.alhe22lali.cfd/api/ext/uninstall-feedback';
+  var STORE_URL = '';                 // رابط الإضافة في متجر Chrome: يظهر زر «إعادة التثبيت» عند تعبئته بعد نشرها
+  var PHONE = '966547984534';
+  var REASONS = ['not_working', 'install_hard', 'missing_features', 'price', 'trial_ended', 'alternative', 'temporary', 'no_whatsapp_web', 'other'];
+
+  var T = {
+    ar: {
+      title: 'نأسف لمغادرتك - مساعد الطباعة الذكي',
+      brand: 'مساعد الطباعة الذكي', brandSub: 'اطبع من واتساب ويب',
+      h1: 'نأسف لمغادرتك',
+      lead: 'أُزيل مساعد الطباعة الذكي من متصفحك. قبل أن تذهب، سؤال واحد سريع يساعدنا على تحسين الإضافة.',
+      reasonLabel: 'سبب الحذف',
+      reasons: {
+        not_working: 'الطباعة لم تعمل أو ظهرت أخطاء',
+        install_hard: 'وجدت صعوبة في التثبيت أو برنامج الخدمات',
+        missing_features: 'تنقصها مزايا أحتاجها',
+        price: 'السعر مرتفع أو لا أريد الاشتراك',
+        trial_ended: 'انتهت التجربة المجانية',
+        alternative: 'وجدت بديلاً أفضل',
+        temporary: 'احتجتها مؤقتاً فقط',
+        no_whatsapp_web: 'لم أعد أستخدم واتساب ويب',
+        other: 'سبب آخر'
+      },
+      detailsLabel: 'أخبرنا أكثر (اختياري)', detailsPh: 'مثلاً: ما المشكلة التي واجهتها أو المزايا التي تنقصك؟',
+      send: 'إرسال الملاحظات', skip: 'لا، شكراً',
+      privacy: 'مجهول بالكامل: لا نرسل رقمك ولا كود اشتراكك ولا بصمة جهازك، فقط ما تكتبه هنا ورقم الإصدار.',
+      errPick: 'اختر سبباً من القائمة أولاً.', errFail: 'تعذّر الإرسال، حاول مرة أخرى بعد قليل.', errRate: 'أرسلت عدة مرات، حاول لاحقاً.', sending: 'جارٍ الإرسال…',
+      thanksH: 'شكراً لك', thanksSent: 'وصلت ملاحظاتك للفريق. إن احتجت الإضافة يوماً فأنت دائماً مرحّب بك.', thanksSkip: 'لا بأس. إن احتجت الإضافة يوماً فأنت دائماً مرحّب بك.',
+      reinstall: 'إعادة تثبيت الإضافة', contact: 'تواصل معنا على واتساب',
+      waMsg: 'السلام عليكم، حذفت مساعد الطباعة الذكي وأرغب بالمساعدة.'
+    },
+    en: {
+      title: 'Sorry to see you go - Smart Print Assistant',
+      brand: 'Smart Print Assistant', brandSub: 'Print from WhatsApp Web',
+      h1: 'Sorry to see you go',
+      lead: 'Smart Print Assistant was removed from your browser. Before you leave, one quick question helps us improve the extension.',
+      reasonLabel: 'Reason for uninstalling',
+      reasons: {
+        not_working: 'Printing did not work or I got errors',
+        install_hard: 'Installation or the services program was hard',
+        missing_features: 'Missing features I need',
+        price: 'Price is high or I do not want to subscribe',
+        trial_ended: 'The free trial ended',
+        alternative: 'I found a better alternative',
+        temporary: 'I only needed it temporarily',
+        no_whatsapp_web: 'I no longer use WhatsApp Web',
+        other: 'Another reason'
+      },
+      detailsLabel: 'Tell us more (optional)', detailsPh: 'For example: what problem did you face, or which features are missing?',
+      send: 'Send feedback', skip: 'No thanks',
+      privacy: 'Fully anonymous: we do not send your number, subscription code or device fingerprint, only what you type here and the version number.',
+      errPick: 'Please choose a reason first.', errFail: 'Could not send, please try again shortly.', errRate: 'You sent several times, try again later.', sending: 'Sending…',
+      thanksH: 'Thank you', thanksSent: 'Your feedback reached the team. If you ever need the extension again, you are always welcome back.', thanksSkip: 'No problem. If you ever need the extension again, you are always welcome back.',
+      reinstall: 'Reinstall the extension', contact: 'Contact us on WhatsApp',
+      waMsg: 'Hello, I uninstalled Smart Print Assistant and would like some help.'
+    }
+  };
+
+  var KEY = 'privacy_lang';
+  var q = new URLSearchParams(location.search);
+  var version = /^\d{1,3}\.\d{1,3}\.\d{1,3}$/.test(q.get('v') || '') ? q.get('v') : '';
+  var lang = pick(), sent = false, busy = false;
+
+  function pick() {
+    var l = q.get('lang');
+    if (l === 'ar' || l === 'en') return l;
+    try { var s = localStorage.getItem(KEY); if (s === 'ar' || s === 'en') return s; } catch (e) {}
+    return /^ar\b/i.test(navigator.language || '') ? 'ar' : 'en';
+  }
+  function $(id) { return document.getElementById(id); }
+  function chosen() { var r = document.querySelector('input[name="reason"]:checked'); return r ? r.value : ''; }
+
+  function render() {
+    var t = T[lang], ar = lang === 'ar', keep = chosen();
+    document.documentElement.lang = lang;
+    document.documentElement.dir = ar ? 'rtl' : 'ltr';
+    document.title = t.title;
+    var els = document.querySelectorAll('[data-t]');
+    for (var i = 0; i < els.length; i++) els[i].textContent = t[els[i].getAttribute('data-t')];
+    $('details').placeholder = t.detailsPh;
+    var btn = $('lang-btn');
+    btn.textContent = ar ? 'EN' : 'ع';
+    btn.className = 'lang-btn' + (ar ? '' : ' to-ar');
+    btn.setAttribute('aria-label', ar ? 'Switch to English' : 'التبديل إلى العربية');
+
+    var box = $('reasons');
+    var legend = box.querySelector('legend');
+    box.textContent = '';
+    box.appendChild(legend);
+    REASONS.forEach(function (k) {
+      var label = document.createElement('label');
+      var input = document.createElement('input');
+      input.type = 'radio'; input.name = 'reason'; input.value = k; input.checked = k === keep;
+      input.addEventListener('change', function () { $('err').textContent = ''; });
+      var span = document.createElement('span');
+      span.textContent = t.reasons[k];
+      label.appendChild(input); label.appendChild(span);
+      box.appendChild(label);
+    });
+
+    $('thanks-p').textContent = sent ? t.thanksSent : t.thanksSkip;
+    var re = $('reinstall');
+    re.hidden = !STORE_URL;
+    if (STORE_URL) re.href = STORE_URL;
+    $('contact').href = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(t.waMsg);
+    if (busy) $('send').textContent = t.sending;
+  }
+
+  function showThanks() {
+    $('form').hidden = true;
+    $('thanks').hidden = false;
+    render();
+    window.scrollTo(0, 0);
+  }
+
+  $('lang-btn').addEventListener('click', function () {
+    lang = lang === 'ar' ? 'en' : 'ar';
+    try { localStorage.setItem(KEY, lang); } catch (e) {}
+    render();
+  });
+  $('details').addEventListener('input', function () { $('count').textContent = $('details').value.length; });
+  $('skip').addEventListener('click', function () { sent = false; showThanks(); });
+
+  $('form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (busy) return;
+    var t = T[lang], reason = chosen();
+    if (!reason) { $('err').textContent = t.errPick; return; }
+    busy = true; $('send').disabled = true; $('send').textContent = t.sending; $('err').textContent = '';
+    var body = { reason: reason, details: $('details').value.trim().slice(0, 1000), lang: lang };
+    if (version) body.v = version;
+    fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
+      .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { status: r.status, j: j }; }); })
+      .then(function (res) {
+        busy = false; $('send').disabled = false; $('send').textContent = t.send;
+        if (res.status === 200 && res.j && res.j.ok) { sent = true; showThanks(); }
+        else $('err').textContent = res.status === 429 ? t.errRate : t.errFail;
+      })
+      .catch(function () { busy = false; $('send').disabled = false; $('send').textContent = t.send; $('err').textContent = t.errFail; });
+  });
+
+  render();
+})();
+</script>
+</body>
+</html>
