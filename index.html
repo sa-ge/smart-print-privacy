@@ -111,38 +111,54 @@
         إذا لم يكن برنامج الخدمات المحلي يعمل، تبقى الملفات مؤقتاً في ذاكرة المتصفح على نفس الجهاز لعرضها وحفظها وفتحها، وتُحذف من الذاكرة عند إغلاق صفحة واتساب ويب.
       </p>
 
-      <h2>3. البيانات التي تُرسَل إلى الخادم وسبب إرسالها</h2>
+      <h2>3. أذونات الإضافة والعناوين التي تتصل بها</h2>
+      <p><b class="ltr">https://web.whatsapp.com/*</b></p>
+      <p>
+        الموقع الوحيد الذي تعمل عليه الإضافة. يُستخدم الإذن لتفعيل اللوحة الجانبية داخل واتساب ويب، وعرض ملفات المحادثة وصورها وتجهيزها للطباعة، والبحث عن العملاء وحفظ أرقامهم، وإرسال الردود السريعة التي يختارها المستخدم. كما يُستخدم لقراءة رقم حساب المستخدم واسمه لبدء التجربة وإدارة الاشتراك. لا تُخزّن أو تُرسل بيانات عن تبويبات المواقع الأخرى.
+      </p>
+      <p><b class="ltr">http://127.0.0.1:8888/*</b> و<b class="ltr">http://127.0.0.1:8889/*</b> و<b class="ltr">http://127.0.0.1:5001/*</b></p>
+      <p>للاتصال بثلاث خدمات محلية يثبّتها المستخدم على جهازه لتوفير ميزات الطباعة ومعالجة الملفات:</p>
+      <ul>
+        <li><span class="ltr">8888</span> — خدمة الطباعة: عرض الطابعات وإرسال مهام الطباعة وقراءة تقاريرها.</li>
+        <li><span class="ltr">8889</span> — خدمة الوسائط: حفظ الملفات والصور محليًا، ومعاينتها، وعدّ صفحاتها، وتنفيذ أدوات الملفات.</li>
+        <li><span class="ltr">5001</span> — خدمة معالجة الصور: قص الحواف وتحسين الصور وتجهيزها بشكل مستند ممسوح ضوئيًا.</li>
+      </ul>
+      <p>هذه العناوين محلية على جهاز المستخدم، ولا تشير إلى خوادم خارجية.</p>
+      <p><b>الاتصال بخادم الاشتراك:</b> <span class="ltr">http://64.227.145.50:4000</span></p>
+      <p>تتصل الإضافة أيضًا بخادم خارجي لإنشاء التجربة وتفعيل الاشتراك والتحقق منه واسترجاعه.</p>
+
+      <h2>4. البيانات التي تُرسَل إلى الخادم وسبب إرسالها</h2>
       <p>لتفعيل الاشتراك والتحقق من صلاحيته فقط، تُرسَل البيانات التقنية التالية إلى خادم التفعيل:</p>
       <table>
         <tr><th>البيان</th><th>سبب الإرسال</th></tr>
         <tr><td>كود الاشتراك</td><td>التحقق من صحة الاشتراك وصلاحيته</td></tr>
-        <tr><td>معرّف الجهاز (Device Fingerprint)</td><td>لربط الاشتراك بالجهاز والحدّ من عدد الأجهزة المسموح بها لكل كود</td></tr>
-        <tr><td>معرّف عشوائي تولّده الإضافة</td><td>لربط الاشتراك بالجهاز حين لا يعمل برنامج الخدمات المحلي</td></tr>
+        <tr><td>معرّف الجهاز (Device Fingerprint)</td><td>يُرسله برنامج الخدمات المحلي عند تشغيله، لربط الاشتراك بالجهاز والحدّ من عدد الأجهزة المسموح بها لكل كود</td></tr>
         <tr><td>رقم واتساب المفتوح في واتساب ويب</td><td>لربط الاشتراك بحساب واتساب المستخدم، وليتعرّف مزوّد الخدمة على الاشتراك عند التواصل والتجديد. يُقرأ رقم الحساب نفسه فقط، ولا تُقرأ أو تُرسَل المحادثات أو جهات الاتصال</td></tr>
         <tr><td>وقت التفعيل</td><td>حساب بداية ونهاية صلاحية الاشتراك، وتتبع تاريخ الأنشطة على الحساب</td></tr>
-        <tr><td>عدد أوامر الطباعة (رقم فقط)</td><td>احتساب الاستخدام ضمن الاشتراك؛ لا يتضمن أسماء الملفات أو محتواها</td></tr>
+        <tr><td>عدد أوامر الطباعة والمعاينة (أرقام فقط)</td><td>احتساب الاستخدام ضمن الاشتراك؛ لا يتضمن أسماء الملفات أو محتواها</td></tr>
         <tr><td>عنوان IP</td><td>حماية النظام من إساءة الاستخدام ومحاولات مشاركة كود واحد على نطاق واسع غير مصرَّح به</td></tr>
       </table>
       <p>
         هذه البيانات التقنية منفصلة تماماً عن ملفاتك ومحادثاتك، ولا تتضمن أي محتوى من الملفات أو الصور أو المراسلات.
       </p>
 
-      <h2>4. التجربة المجانية</h2>
+      <h2>5. التجربة المجانية</h2>
       <p>
-        تبدأ التجربة المجانية (7 أيام) تلقائياً عند فتح الإضافة أول مرة وواتساب ويب مسجّل الدخول، دون نموذج تملؤه. يُرسَل إلى خادم التفعيل: <b>رقم واتساب المفتوح في واتساب ويب واسم الحساب</b> كما يظهران في واتساب، مع معرّف عشوائي للجهاز تولّده الإضافة. يُنشأ بها اشتراك تجريبي مرتبط بجهازك، ويظهر الاسم والرقم لمزوّد الخدمة فقط للتواصل معك بشأن الاشتراك.
+        تبدأ التجربة المجانية (7 أيام) تلقائياً عند فتح الإضافة أول مرة وواتساب ويب مسجّل الدخول، دون نموذج تملؤه. يُرسَل إلى خادم التفعيل: <b>رقم واتساب المفتوح في واتساب ويب واسم الحساب</b> كما يظهران في واتساب. يُنشأ بها اشتراك تجريبي مرتبط برقم واتساب، ويظهر الاسم والرقم لمزوّد الخدمة فقط للتواصل معك بشأن الاشتراك.
       </p>
       <ul>
         <li>يُقرأ رقم الحساب واسمه فقط من واتساب ويب؛ لا تُقرأ أو تُرسَل المحادثات أو جهات الاتصال.</li>
-        <li>يُحتفَظ بمعرّف الجهاز ورقم واتساب لمنع تكرار التجربة (تجربة واحدة لكل جهاز ولكل رقم).</li>
+        <li>يُحتفَظ برقم واتساب، وبمعرّف الجهاز عند تشغيل برنامج الخدمات، لمنع تكرار التجربة (تجربة واحدة لكل رقم ولكل جهاز).</li>
+        <li>إذا أُعيد تثبيت الإضافة أو فُتحت في متصفح جديد بنفس الرقم، يُعاد الاشتراك المرتبط بالرقم بدل إنشاء تجربة جديدة.</li>
         <li>إن كان واتساب ويب غير مسجّل الدخول لا يُرسَل شيء، وتظهر رسالة تطلب تسجيل الدخول.</li>
       </ul>
 
-      <h2>5. البلاغات التقنية الاختيارية</h2>
+      <h2>6. البلاغات التقنية الاختيارية</h2>
       <p>
         إذا اخترت بنفسك إرسال بلاغ تقني من داخل الإضافة، يُرسَل إلى خادم الدعم ما تكتبه في نموذج البلاغ فقط: العنوان والوصف ورقم الجوال للتواصل معك والاسم إن أدخلته، وأي مرفقات تختار إرفاقها بنفسك، مع كود الاشتراك ومعرّف الجهاز. يُستخدم ذلك لمعالجة المشكلة والتواصل معك بشأنها فقط، ولا يُرسَل أي بلاغ دون أن تضغط زر الإرسال.
       </p>
 
-      <h2>6. مدة الاحتفاظ بالبيانات</h2>
+      <h2>7. مدة الاحتفاظ بالبيانات</h2>
       <p>
         يُحتفَظ ببيانات التفعيل المذكورة أعلاه طوال فترة الاشتراك النشط. بعد إلغاء الاشتراك أو انتهائه، تُحذَف هذه البيانات نهائياً من خادم التفعيل بعد مرور <b>٩٠ يوماً</b> من تاريخ الإلغاء أو الانتهاء.
       </p>
@@ -150,14 +166,14 @@
         يُستثنى من ذلك سجل التجربة المجانية (معرّف الجهاز ورقم واتساب واسم الحساب)، إذ يُحتفَظ به لمنع تكرار التجربة، ويُحذف عند طلبك ذلك من مزوّد الخدمة.
       </p>
 
-      <h2>7. مشاركة البيانات مع أطراف ثالثة</h2>
+      <h2>8. مشاركة البيانات مع أطراف ثالثة</h2>
       <ul>
         <li>لا تُباع بيانات المستخدمين لأي طرف ثالث تحت أي ظرف.</li>
         <li>لا تُشارَك البيانات التقنية أو بيانات التجربة المجانية أو بيانات البلاغات مع أي جهة خارجية.</li>
         <li>لا تُستخدَم البيانات لأي غرض خارج نطاق تفعيل الاشتراك والتحقق منه، والدعم الفني، وحماية النظام من إساءة الاستخدام.</li>
       </ul>
 
-      <h2>8. حقوق المستخدم</h2>
+      <h2>9. حقوق المستخدم</h2>
       <p>
         يمكنك طلب حذف بيانات التفعيل أو التجربة المجانية أو البلاغات الخاصة بك في أي وقت عبر التواصل مع مزوّد الخدمة أعلاه. إزالة المنتج من جهازك توقف فوراً أي اتصال مستقبلي بخادم التفعيل.
       </p>
@@ -201,38 +217,54 @@
         If the local services app is not running, files stay temporarily in the browser's memory on the same computer so they can be shown, saved and opened, and they are cleared from memory when the WhatsApp Web page is closed.
       </p>
 
-      <h2>3. Data sent to our server, and why</h2>
+      <h2>3. Extension permissions and the addresses it connects to</h2>
+      <p><b>https://web.whatsapp.com/*</b></p>
+      <p>
+        The only site the extension works on. This permission is used to open the side panel inside WhatsApp Web, show the chat's files and photos and prepare them for printing, search customers and save their numbers, and send the quick replies the user chooses. It is also used to read the user's own account number and name to start the trial and manage the subscription. No data about tabs on other sites is stored or sent.
+      </p>
+      <p><b>http://127.0.0.1:8888/*</b>, <b>http://127.0.0.1:8889/*</b> and <b>http://127.0.0.1:5001/*</b></p>
+      <p>To connect to three local services the user installs on their own computer for printing and file processing:</p>
+      <ul>
+        <li>8888 — print service: lists printers, sends print jobs and reads their reports.</li>
+        <li>8889 — media service: saves files and photos locally, previews them, counts their pages and runs the file tools.</li>
+        <li>5001 — image service: crops edges, enhances photos and prepares them to look like a scanned document.</li>
+      </ul>
+      <p>These addresses are local to the user's computer and do not point to any external server.</p>
+      <p><b>Connection to the subscription server:</b> http://64.227.145.50:4000</p>
+      <p>The extension also connects to an external server to create the trial and to activate, check and restore the subscription.</p>
+
+      <h2>4. Data sent to our server, and why</h2>
       <p>Only to activate your subscription and check that it is valid, the following technical data is sent to the activation server:</p>
       <table>
         <tr><th>Data</th><th>Why it is sent</th></tr>
         <tr><td>Subscription code</td><td>To verify that the subscription is genuine and active</td></tr>
-        <tr><td>Device identifier (device fingerprint)</td><td>To link the subscription to the device and limit the number of devices allowed per code</td></tr>
-        <tr><td>A random identifier created by the extension</td><td>To link the subscription to the device when the local services app is not running</td></tr>
+        <tr><td>Device identifier (device fingerprint)</td><td>Sent by the local services app when it runs, to link the subscription to the device and limit the number of devices allowed per code</td></tr>
         <tr><td>The WhatsApp number logged in to WhatsApp Web</td><td>To link the subscription to the user's WhatsApp account, and so the service provider can recognise the subscription when you contact us or renew. Only the account's own number is read; chats and contacts are never read or sent</td></tr>
         <tr><td>Activation time</td><td>To calculate when the subscription starts and ends, and to keep a history of account activity</td></tr>
-        <tr><td>Number of print jobs (a count only)</td><td>To measure usage under the subscription; it never includes file names or content</td></tr>
+        <tr><td>Number of print and preview commands (counts only)</td><td>To measure usage under the subscription; it never includes file names or content</td></tr>
         <tr><td>IP address</td><td>To protect the system from abuse and from one code being shared widely without permission</td></tr>
       </table>
       <p>
         This technical data is completely separate from your files and chats, and it never includes any content from your files, photos or messages.
       </p>
 
-      <h2>4. Free trial</h2>
+      <h2>5. Free trial</h2>
       <p>
-        The free trial (7 days) starts automatically the first time you open the extension while you are logged in to WhatsApp Web, with no form to fill in. The following is sent to the activation server: the <b>WhatsApp number logged in to WhatsApp Web and its account name</b>, as they appear in WhatsApp, together with a random device identifier created by the extension. They are used to create a trial subscription linked to your computer, and the name and number are visible only to the service provider so we can contact you about your subscription.
+        The free trial (7 days) starts automatically the first time you open the extension while you are logged in to WhatsApp Web, with no form to fill in. The following is sent to the activation server: the <b>WhatsApp number logged in to WhatsApp Web and its account name</b>, as they appear in WhatsApp. They are used to create a trial subscription linked to your WhatsApp number, and the name and number are visible only to the service provider so we can contact you about your subscription.
       </p>
       <ul>
         <li>Only the account's number and name are read from WhatsApp Web; chats and contacts are never read or sent.</li>
-        <li>The device identifier and WhatsApp number are kept to prevent repeated trials (one trial per computer and per number).</li>
+        <li>The WhatsApp number, and the device identifier once the services app runs, are kept to prevent repeated trials (one trial per number and per computer).</li>
+        <li>If the extension is reinstalled or opened in a new browser with the same number, the subscription linked to that number is restored instead of creating a new trial.</li>
         <li>If you are not logged in to WhatsApp Web, nothing is sent and a message asks you to log in.</li>
       </ul>
 
-      <h2>5. Optional technical reports</h2>
+      <h2>6. Optional technical reports</h2>
       <p>
         If you choose to send a technical report from inside the extension, only what you enter in the report form is sent to our support server: the title, the description, your phone number so we can reach you, your name if you enter it, and any attachments you choose to add, together with your subscription code and device identifier. This is used only to fix the problem and contact you about it. No report is ever sent unless you press the send button.
       </p>
 
-      <h2>6. How long we keep data</h2>
+      <h2>7. How long we keep data</h2>
       <p>
         The activation data described above is kept for as long as your subscription is active. After the subscription is cancelled or expires, this data is permanently deleted from the activation server <b>90 days</b> after the cancellation or expiry date.
       </p>
@@ -240,14 +272,14 @@
         The one exception is the free-trial record (device identifier, WhatsApp number and account name), which is kept to prevent repeated trials and is deleted when you ask the service provider to remove it.
       </p>
 
-      <h2>7. Sharing with third parties</h2>
+      <h2>8. Sharing with third parties</h2>
       <ul>
         <li>User data is never sold to any third party.</li>
         <li>Technical data, free-trial data and report data are not shared with any outside party.</li>
         <li>Data is not used for any purpose other than activating and verifying the subscription, technical support, and protecting the system from abuse.</li>
       </ul>
 
-      <h2>8. Your rights</h2>
+      <h2>9. Your rights</h2>
       <p>
         You can ask us to delete your activation, free-trial or report data at any time by contacting the service provider above. Removing the product from your computer immediately stops any further connection to the activation server.
       </p>
