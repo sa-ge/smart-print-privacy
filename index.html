@@ -73,7 +73,7 @@
 <body>
 <div class="wrap">
   <div class="doc">
-    <button type="button" id="lang-btn" class="lang-btn" aria-label="Switch language">EN</button>
+    <select id="lang-btn" class="lang-btn" aria-label="Language"><option value="ar">ع</option><option value="en">EN</option><option value="es">ES</option></select>
 
     <!-- ═══════════════ العربية ═══════════════ -->
     <article id="ar" lang="ar" dir="rtl">
@@ -96,7 +96,6 @@
       </p>
       <div class="contact">
         <a href="https://wa.me/966547984534" target="_blank" rel="noopener">واتساب: <span class="ltr">966547984534</span></a>
-        <a href="https://wa.me/966571877751" target="_blank" rel="noopener">واتساب: <span class="ltr">966571877751</span></a>
         <a href="mailto:aldms7751@gmail.com">البريد: <span class="ltr">aldms7751@gmail.com</span></a>
       </div>
 
@@ -205,7 +204,6 @@
       </p>
       <div class="contact">
         <a href="https://wa.me/966547984534" target="_blank" rel="noopener">WhatsApp: 966547984534</a>
-        <a href="https://wa.me/966571877751" target="_blank" rel="noopener">WhatsApp: 966571877751</a>
         <a href="mailto:aldms7751@gmail.com">Email: aldms7751@gmail.com</a>
       </div>
 
@@ -292,33 +290,141 @@
 
       <div class="updated">Last updated: October 2026</div>
     </article>
+
+    <!-- ═══════════════ Español ═══════════════ -->
+    <article id="es" lang="es" dir="ltr" hidden>
+      <h1>Política de privacidad</h1>
+      <div class="subtitle">Asistente de Impresión Inteligente – Imprime desde WhatsApp Web</div>
+
+      <div class="badge-row">
+        <span class="badge">⚙ Procesamiento totalmente local</span>
+        <span class="badge">🚫 Nunca vendemos datos</span>
+        <span class="badge">🗑 Se eliminan automáticamente a los 90 días</span>
+      </div>
+
+      <div class="callout">
+        <b>En resumen:</b> tus archivos y fotos nunca salen de tu ordenador. Nuestro servidor solo recibe datos técnicos limitados relacionados con la activación y tu suscripción, además del número de WhatsApp con el que has iniciado sesión en WhatsApp Web y el nombre de esa cuenta. Nunca tiene acceso al contenido de tus archivos, chats o contactos.
+      </div>
+
+      <h2>1. Proveedor del servicio</h2>
+      <p>
+        Este producto («Asistente de Impresión Inteligente – Imprime desde WhatsApp Web») lo ofrece y gestiona <b>Papelería Saree Al-Daam — Tabuk, Arabia Saudí</b>. Para cualquier pregunta sobre esta política o los datos de tu cuenta, contáctanos:
+      </p>
+      <div class="contact">
+        <a href="https://wa.me/966547984534" target="_blank" rel="noopener">WhatsApp: 966547984534</a>
+        <a href="mailto:aldms7751@gmail.com">Correo: aldms7751@gmail.com</a>
+      </div>
+
+      <h2>2. Tus archivos y fotos se quedan en tu ordenador</h2>
+      <p>
+        Todos los archivos, fotos y documentos que se procesan o imprimen se quedan solo en el ordenador del usuario. El procesamiento y la impresión los realiza un servicio que se ejecuta en el mismo ordenador (127.0.0.1). Ningún archivo ni foto se sube o envía jamás a ningún servidor externo.
+      </p>
+      <p>
+        Estos archivos se guardan temporalmente en una carpeta local de la extensión dentro de la carpeta de Descargas del usuario, listos para procesarse o imprimirse. Nadie más que el usuario tiene acceso a ellos.
+      </p>
+      <p>
+        Si la aplicación de servicios local no está en ejecución, los archivos permanecen temporalmente en la memoria del navegador en el mismo ordenador para poder mostrarlos, guardarlos y abrirlos, y se borran de la memoria al cerrar la página de WhatsApp Web.
+      </p>
+
+      <h2>3. Permisos de la extensión y direcciones a las que se conecta</h2>
+      <p><b>https://web.whatsapp.com/*</b></p>
+      <p>
+        El único sitio en el que funciona la extensión. Este permiso se usa para abrir el panel lateral dentro de WhatsApp Web, mostrar los archivos y fotos del chat y prepararlos para imprimir, buscar clientes y guardar sus números, y enviar las respuestas rápidas que elige el usuario. También se usa para leer el número y el nombre de la propia cuenta del usuario para iniciar la prueba y gestionar la suscripción. No se guarda ni se envía ningún dato sobre pestañas de otros sitios.
+      </p>
+      <p><b>http://127.0.0.1:8888/*</b>, <b>http://127.0.0.1:8889/*</b> y <b>http://127.0.0.1:5001/*</b></p>
+      <p>Para conectarse a tres servicios locales que el usuario instala en su propio ordenador para imprimir y procesar archivos:</p>
+      <ul>
+        <li>8888 — servicio de impresión: lista las impresoras, envía los trabajos de impresión y lee sus informes.</li>
+        <li>8889 — servicio de archivos: guarda archivos y fotos localmente, muestra vistas previas, cuenta sus páginas y ejecuta las herramientas de archivos.</li>
+        <li>5001 — servicio de imágenes: recorta bordes, mejora fotos y las prepara para que parezcan un documento escaneado.</li>
+      </ul>
+      <p>Estas direcciones son locales del ordenador del usuario y no apuntan a ningún servidor externo.</p>
+      <p><b>Conexión con el servidor de suscripción:</b> https://api.alhe22lali.cfd</p>
+      <p>La extensión también se conecta a un servidor externo para crear la prueba y para activar, comprobar y restaurar la suscripción.</p>
+
+      <h2>4. Datos enviados a nuestro servidor y por qué</h2>
+      <p>Solo para activar tu suscripción y comprobar que es válida, se envían al servidor de activación los siguientes datos técnicos:</p>
+      <table>
+        <tr><th>Dato</th><th>Por qué se envía</th></tr>
+        <tr><td>Código de suscripción</td><td>Para verificar que la suscripción es auténtica y está activa</td></tr>
+        <tr><td>Identificador del dispositivo (huella del dispositivo)</td><td>Lo envía la aplicación de servicios local al ejecutarse, para vincular la suscripción al dispositivo y limitar el número de dispositivos permitidos por código</td></tr>
+        <tr><td>El número de WhatsApp con el que has iniciado sesión en WhatsApp Web</td><td>Para vincular la suscripción a la cuenta de WhatsApp del usuario y para que el proveedor reconozca la suscripción cuando nos contactas o renuevas. Solo se lee el número de la propia cuenta; los chats y contactos nunca se leen ni se envían</td></tr>
+        <tr><td>Hora de activación</td><td>Para calcular cuándo empieza y termina la suscripción y llevar un historial de la actividad de la cuenta</td></tr>
+        <tr><td>Número de órdenes de impresión y vista previa (solo recuentos)</td><td>Para medir el uso dentro de la suscripción; nunca incluye nombres ni contenido de archivos</td></tr>
+        <tr><td>Dirección IP</td><td>Para proteger el sistema del abuso y de que un código se comparta ampliamente sin permiso</td></tr>
+      </table>
+      <p>
+        Estos datos técnicos están completamente separados de tus archivos y chats, y nunca incluyen contenido de tus archivos, fotos o mensajes.
+      </p>
+
+      <h2>5. Prueba gratuita</h2>
+      <p>
+        La prueba gratuita (7 días) empieza automáticamente la primera vez que abres la extensión con la sesión de WhatsApp Web iniciada, sin formularios que rellenar. Se envían al servidor de activación: el <b>número de WhatsApp con la sesión iniciada en WhatsApp Web y el nombre de la cuenta</b>, tal como aparecen en WhatsApp. Se usan para crear una suscripción de prueba vinculada a tu número de WhatsApp, y el nombre y el número solo los ve el proveedor del servicio para poder contactarte sobre tu suscripción.
+      </p>
+      <ul>
+        <li>De WhatsApp Web solo se leen el número y el nombre de la cuenta; los chats y contactos nunca se leen ni se envían.</li>
+        <li>El número de WhatsApp, y el identificador del dispositivo cuando se ejecuta la aplicación de servicios, se conservan para evitar pruebas repetidas (una prueba por número y por ordenador).</li>
+        <li>Si la extensión se reinstala o se abre en un navegador nuevo con el mismo número, se restaura la suscripción vinculada a ese número en lugar de crear una prueba nueva.</li>
+        <li>Si no has iniciado sesión en WhatsApp Web, no se envía nada y un mensaje te pide que inicies sesión.</li>
+      </ul>
+
+      <h2>6. Informes técnicos opcionales</h2>
+      <p>
+        Si eliges enviar un informe técnico desde la extensión, solo se envía a nuestro servidor de soporte lo que escribes en el formulario: el título, la descripción, tu número de teléfono para contactarte, tu nombre si lo escribes y los adjuntos que decidas añadir, junto con tu código de suscripción y el identificador del dispositivo. Se usa solo para solucionar el problema y contactarte al respecto. Nunca se envía ningún informe a menos que pulses el botón de enviar.
+      </p>
+      <p>
+        <b>Página de despedida tras desinstalar:</b> cuando eliminas la extensión del navegador, Chrome abre una página breve (alojada en GitHub Pages) que pregunta el motivo. La respuesta es totalmente opcional y anónima: si pulsas «Enviar comentarios», solo se envían a nuestro servidor el motivo elegido, el texto que escribiste (si lo hay), el número de versión de la extensión y el idioma de la página. No se envían ni se guardan con ella tu código de suscripción, tu número de WhatsApp, el identificador del dispositivo ni la dirección IP. Si pulsas «No, gracias» o cierras la página, no se envía nada.
+      </p>
+
+      <h2>7. Cuánto tiempo conservamos los datos</h2>
+      <p>
+        Los datos de activación descritos arriba se conservan mientras tu suscripción esté activa. Tras cancelarse o vencer la suscripción, estos datos se eliminan definitivamente del servidor de activación <b>90 días</b> después de la fecha de cancelación o vencimiento.
+      </p>
+      <p>
+        La única excepción es el registro de la prueba gratuita (identificador del dispositivo, número de WhatsApp y nombre de la cuenta), que se conserva para evitar pruebas repetidas y se elimina cuando pides al proveedor del servicio que lo borre.
+      </p>
+
+      <h2>8. Compartir con terceros</h2>
+      <ul>
+        <li>Los datos del usuario nunca se venden a terceros.</li>
+        <li>Los datos técnicos, los de la prueba gratuita y los de los informes no se comparten con ninguna parte externa.</li>
+        <li>Los datos no se usan para ningún fin distinto de activar y verificar la suscripción, el soporte técnico y la protección del sistema frente al abuso.</li>
+      </ul>
+
+      <h2>9. Tus derechos</h2>
+      <p>
+        Puedes pedirnos en cualquier momento que eliminemos tus datos de activación, de prueba gratuita o de informes contactando con el proveedor del servicio indicado arriba. Eliminar el producto de tu ordenador detiene inmediatamente cualquier conexión posterior con el servidor de activación.
+      </p>
+
+      <div class="updated">Última actualización: octubre de 2026</div>
+    </article>
   </div>
 </div>
 <script>
 (function () {
   var KEY = 'privacy_lang';
+  var LANGS = ['ar', 'en', 'es'];
+  var TITLES = { ar: 'سياسة الخصوصية - مساعد الطباعة الذكي', en: 'Privacy Policy - Smart Print Assistant', es: 'Política de privacidad - Asistente de Impresión Inteligente' };
   function pick() {
-    var q = /[?&]lang=(ar|en)\b/.exec(location.search);
+    var q = /[?&]lang=(ar|en|es)\b/.exec(location.search);
     if (q) return q[1];
-    try { var s = localStorage.getItem(KEY); if (s === 'ar' || s === 'en') return s; } catch (e) {}
-    return /^ar\b/i.test(navigator.language || '') ? 'ar' : 'en';
+    try { var s = localStorage.getItem(KEY); if (LANGS.indexOf(s) >= 0) return s; } catch (e) {}
+    var nl = navigator.language || '';
+    return /^ar\b/i.test(nl) ? 'ar' : /^es\b/i.test(nl) ? 'es' : 'en';
   }
   var btn = document.getElementById('lang-btn');
   function show(lang) {
-    var ar = lang === 'ar';
-    document.getElementById('ar').hidden = !ar;
-    document.getElementById('en').hidden = ar;
+    LANGS.forEach(function (l) { document.getElementById(l).hidden = l !== lang; });
     document.documentElement.lang = lang;
-    document.documentElement.dir = ar ? 'rtl' : 'ltr';
-    document.title = ar ? 'سياسة الخصوصية - مساعد الطباعة الذكي' : 'Privacy Policy - Smart Print Assistant';
-    btn.textContent = ar ? 'EN' : 'ع';
-    btn.className = 'lang-btn' + (ar ? '' : ' to-ar');
-    btn.setAttribute('aria-label', ar ? 'Switch to English' : 'التبديل إلى العربية');
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+    document.title = TITLES[lang];
+    btn.value = lang;
+    btn.className = 'lang-btn' + (lang === 'ar' ? ' to-ar' : '');
   }
   var cur = pick();
   show(cur);
-  btn.addEventListener('click', function () {
-    cur = cur === 'ar' ? 'en' : 'ar';
+  btn.addEventListener('change', function () {
+    cur = LANGS.indexOf(btn.value) >= 0 ? btn.value : 'en';
     try { localStorage.setItem(KEY, cur); } catch (e) {}
     show(cur);
   });

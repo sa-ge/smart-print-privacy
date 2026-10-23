@@ -174,7 +174,7 @@
         <div class="brand-sub" data-t="brandSub"></div>
       </div>
     </div>
-    <button type="button" id="lang-btn" class="lang-btn" aria-label="Switch language">EN</button>
+    <select id="lang-btn" class="lang-btn" aria-label="Language"><option value="ar">ع</option><option value="en">EN</option><option value="es">ES</option></select>
   </header>
 
   <main>
@@ -270,7 +270,7 @@
         ['تذكيرات العملاء', 'موعد لكل عميل يظهر لك داخل واتساب.'],
         ['رسائل سريعة ومحادثة سريعة', 'ردود جاهزة، وفتح محادثة برقم غير محفوظ.'],
         ['حفظ أرقام العملاء وتصديرها', 'حفظ بنقرة وتصدير إلى Excel.'],
-        ['واجهة عربية وإنجليزية', 'بدّل اللغة متى شئت.']
+        ['واجهة بالعربية والإنجليزية والإسبانية', 'بدّل اللغة متى شئت.']
       ],
       vat: 'الأسعار بالريال السعودي.',
       whyTitle: 'لماذا مساعد الطباعة الذكي',
@@ -324,7 +324,7 @@
         ['Client reminders', 'A date per client that shows inside WhatsApp.'],
         ['Quick messages and quick chat', 'Canned replies, and open a chat with an unsaved number.'],
         ['Save and export client numbers', 'Save in one click and export to Excel.'],
-        ['Arabic and English interface', 'Switch language any time.']
+        ['Arabic, English and Spanish interface', 'Switch language any time.']
       ],
       vat: 'Prices are in Saudi riyals (SAR).',
       whyTitle: 'Why Smart Print Assistant',
@@ -346,18 +346,77 @@
       ],
       ctTitle: 'Questions before subscribing?',
       ctText: 'Message us and we will reply. To subscribe, or to get a quote for more computers, write to us and we will send your subscription code.',
-      privacy: 'Privacy Policy'
+      privacy: 'Privacy Policy',
+      waAsk: 'Hello, I would like to ask about a Smart Print Assistant subscription.'
+    },
+    es: {
+      title: 'Precios - Asistente de Impresión Inteligente',
+      brand: 'Asistente de Impresión Inteligente', brandSub: 'Imprime desde WhatsApp Web',
+      h1: 'Precios simples y claros',
+      heroText: 'Empieza con una prueba gratuita y luego elige el periodo que te convenga. Un solo código de suscripción y todas las funciones en cada plan.',
+      devLabel: 'Número de ordenadores (para los dos planes de pago)',
+      dev: function (n) { return String(n); },
+      cur: 'SAR', perMonth: 'SAR / mes', perDev: 'SAR / ordenador / mes', monthly: 'Unos',
+      save: function (n, pct) { return 'Ahorra ' + n + ' SAR (' + pct + ' %) frente a dos pagos semestrales'; },
+      p0: { name: 'Prueba gratuita', sub: 'Prueba todas las funciones antes de suscribirte.', price: 'Gratis', per: '7 días · 1 ordenador · sin pago', cta: 'Empezar la prueba', ctaStore: 'Instala la extensión y empieza', note: 'Empieza dentro de la extensión con tu número de WhatsApp (una vez por número)', msg: 'Hola, me gustaría probar gratis el Asistente de Impresión Inteligente.' },
+      p6: { name: '6 meses', sub: 'Para un uso más largo sin compromiso anual.', per: 'cada 6 meses', cta: 'Pedir este plan', note: 'Pruébalo gratis 7 días antes de suscribirte' },
+      p12: { name: '1 año', sub: 'El más rentable: un solo pago, más barato que dos semestres.', per: 'al año', cta: 'Pedir este plan', note: 'Pruébalo gratis 7 días antes de suscribirte', rec: 'El más rentable' },
+      msg: function (n, p) {
+        return 'Hola, quiero suscribirme al Asistente de Impresión Inteligente: ' + n + (n === 1 ? ' ordenador' : ' ordenadores') + ' - ' + (p === 12 ? '1 año' : '6 meses') + '.';
+      },
+      featHead: 'Funciones',
+      plusHead: 'Qué incluye',
+      trialPlus: ['Todas las funciones durante 7 días', '1 ordenador', 'Sin tarjeta ni pago'],
+      paidPlus: function (n, m) { return ['Un código de suscripción para ' + (n === 1 ? '1 ordenador' : n + ' ordenadores'), 'Actualizaciones y soporte durante ' + m, 'Recordatorio dentro de la extensión antes de que termine']; },
+      months6: '6 meses', months12: 'un año completo',
+      feats: [
+        ['Imprime directamente desde WhatsApp Web', 'Fotos, PDF y documentos en pocos clics.'],
+        ['Imprime varios archivos a la vez', 'Selecciona archivos y ajusta copias, color y doble cara.'],
+        ['Varias páginas en una hoja', '2 o 4 páginas por hoja para ahorrar papel.'],
+        ['Herramientas de imagen', 'Recortar, girar, invertir y un editor al estilo Paint.'],
+        ['Herramientas PDF', 'Convierte imágenes a PDF y simplifica archivos grandes.'],
+        ['Informes de impresión', 'Páginas, blanco y negro y color por cliente.'],
+        ['Recordatorios de clientes', 'Una cita por cliente que aparece dentro de WhatsApp.'],
+        ['Mensajes rápidos y chat rápido', 'Respuestas listas y abrir un chat con un número no guardado.'],
+        ['Guarda y exporta números de clientes', 'Guarda con un clic y exporta a Excel.'],
+        ['Interfaz en árabe, inglés y español', 'Cambia de idioma cuando quieras.']
+      ],
+      vat: 'Los precios están en riales saudíes (SAR).',
+      whyTitle: 'Por qué el Asistente de Impresión Inteligente',
+      why: [
+        [ICON_SHIELD, 'Tus archivos se quedan contigo', 'El procesamiento y la impresión ocurren localmente en tu ordenador. Tus archivos y fotos nunca se suben a ningún servidor.'],
+        [ICON_BOLT, 'Trabajo diario más rápido', 'Imprime lo que te envían los clientes directamente desde el chat en lugar de descargarlo, abrirlo y luego imprimirlo.'],
+        [ICON_HEAD, 'Soporte que responde', 'Escríbenos por WhatsApp o correo y te ayudamos con la instalación, la configuración y la renovación.']
+      ],
+      faqTitle: 'Preguntas frecuentes',
+      faqSub: 'Respuestas rápidas antes de suscribirte.',
+      faq: [
+        ['¿Hay una prueba gratuita?', 'Sí, 7 días gratis que empiezan desde la propia extensión, sin pago. Después decides si quieres suscribirte.'],
+        ['¿Qué diferencia hay entre 6 meses y 1 año?', 'Las mismas funciones. Solo cambian el periodo y el precio: el año sale más barato que dos pagos semestrales, y eliges el número de ordenadores en cualquiera de los dos.'],
+        ['¿Cómo me suscribo y obtengo mi código?', 'Pulsa «Pedir este plan» para abrir un chat de WhatsApp con un mensaje listo. Cuando se complete la suscripción te enviamos el código de suscripción para introducirlo en la extensión.'],
+        ['¿Se suben mis archivos a un servidor?', 'No. La impresión y el procesamiento de archivos ocurren en tu ordenador. Más detalles en la <a data-privacy href="./">Política de privacidad</a>.'],
+        ['¿Necesito instalar un programa?', 'Para imprimir directamente en tu impresora se instala una vez en el ordenador el pequeño programa de servicios; la guía de instalación está dentro de la extensión.'],
+        ['¿Qué pasa cuando mi suscripción está por terminar?', 'Unos días antes aparece un recordatorio dentro de la extensión, y puedes renovar desde ese mismo mensaje por WhatsApp.'],
+        ['¿Necesitas más de 5 ordenadores?', 'Escríbenos por WhatsApp y te enviaremos un presupuesto para tu número de ordenadores.']
+      ],
+      ctTitle: '¿Preguntas antes de suscribirte?',
+      ctText: 'Escríbenos y te responderemos. Para suscribirte, o para pedir un presupuesto para más ordenadores, escríbenos y te enviaremos tu código de suscripción.',
+      privacy: 'Política de privacidad',
+      waAsk: 'Hola, me gustaría preguntar por una suscripción al Asistente de Impresión Inteligente.'
     }
   };
+  T.ar.waAsk = 'السلام عليكم، أرغب بالاستفسار عن اشتراك مساعد الطباعة الذكي.';
 
   var KEY = 'privacy_lang';
+  var LANGS = ['ar', 'en', 'es'];
   var lang = pick(), devices = 1;
 
   function pick() {
-    var q = /[?&]lang=(ar|en)\b/.exec(location.search);
+    var q = /[?&]lang=(ar|en|es)\b/.exec(location.search);
     if (q) return q[1];
-    try { var s = localStorage.getItem(KEY); if (s === 'ar' || s === 'en') return s; } catch (e) {}
-    return /^ar\b/i.test(navigator.language || '') ? 'ar' : 'en';
+    try { var s = localStorage.getItem(KEY); if (LANGS.indexOf(s) >= 0) return s; } catch (e) {}
+    var nl = navigator.language || '';
+    return /^ar\b/i.test(nl) ? 'ar' : /^es\b/i.test(nl) ? 'es' : 'en';
   }
   function fmt(x) { return (Math.round(x * 10) / 10).toString(); }
   function waUrl(text) { return 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(text); }
@@ -411,9 +470,8 @@
     for (var i = 0; i < els.length; i++) els[i].textContent = t[els[i].getAttribute('data-t')];
 
     var btn = document.getElementById('lang-btn');
-    btn.textContent = ar ? 'EN' : 'ع';
-    btn.className = 'lang-btn' + (ar ? '' : ' to-ar');
-    btn.setAttribute('aria-label', ar ? 'Switch to English' : 'التبديل إلى العربية');
+    btn.value = lang;
+    btn.className = 'lang-btn' + (ar ? ' to-ar' : '');
 
     var seg = document.getElementById('devs');
     seg.textContent = '';
@@ -438,14 +496,14 @@
     var pls = document.querySelectorAll('a[data-privacy]');
     for (var j = 0; j < pls.length; j++) pls[j].href = './?lang=' + lang;
 
-    document.getElementById('wa-link').href = waUrl(ar ? 'السلام عليكم، أرغب بالاستفسار عن اشتراك مساعد الطباعة الذكي.' : 'Hello, I would like to ask about a Smart Print Assistant subscription.');
+    document.getElementById('wa-link').href = waUrl(t.waAsk);
     var pl = document.getElementById('privacy-link');
     pl.textContent = t.privacy;
     pl.href = './?lang=' + lang;
   }
 
-  document.getElementById('lang-btn').addEventListener('click', function () {
-    lang = lang === 'ar' ? 'en' : 'ar';
+  document.getElementById('lang-btn').addEventListener('change', function () {
+    lang = LANGS.indexOf(this.value) >= 0 ? this.value : 'en';
     try { localStorage.setItem(KEY, lang); } catch (e) {}
     render();
   });

@@ -88,7 +88,7 @@
         <div class="brand-sub" data-t="brandSub"></div>
       </div>
     </div>
-    <button type="button" id="lang-btn" class="lang-btn" aria-label="Switch language">EN</button>
+    <select id="lang-btn" class="lang-btn" aria-label="Language"><option value="ar">ع</option><option value="en">EN</option><option value="es">ES</option></select>
   </header>
 
   <main>
@@ -176,8 +176,34 @@
       thanksH: 'Thank you', thanksSent: 'Your feedback reached the team. If you ever need the extension again, you are always welcome back.', thanksSkip: 'No problem. If you ever need the extension again, you are always welcome back.',
       reinstall: 'Reinstall the extension', contact: 'Contact us on WhatsApp',
       waMsg: 'Hello, I uninstalled Smart Print Assistant and would like some help.'
+    },
+    es: {
+      title: 'Sentimos que te vayas - Asistente de Impresión Inteligente',
+      brand: 'Asistente de Impresión Inteligente', brandSub: 'Imprime desde WhatsApp Web',
+      h1: 'Sentimos que te vayas',
+      lead: 'El Asistente de Impresión Inteligente se eliminó de tu navegador. Antes de irte, una pregunta rápida nos ayuda a mejorar la extensión.',
+      reasonLabel: 'Motivo de la desinstalación',
+      reasons: {
+        not_working: 'La impresión no funcionó o aparecieron errores',
+        install_hard: 'La instalación o el programa de servicios fue difícil',
+        missing_features: 'Le faltan funciones que necesito',
+        price: 'El precio es alto o no quiero suscribirme',
+        trial_ended: 'Terminó la prueba gratuita',
+        alternative: 'Encontré una alternativa mejor',
+        temporary: 'Solo la necesitaba temporalmente',
+        no_whatsapp_web: 'Ya no uso WhatsApp Web',
+        other: 'Otro motivo'
+      },
+      detailsLabel: 'Cuéntanos más (opcional)', detailsPh: 'Por ejemplo: ¿qué problema tuviste o qué funciones te faltan?',
+      send: 'Enviar comentarios', skip: 'No, gracias',
+      privacy: 'Totalmente anónimo: no enviamos tu número, tu código de suscripción ni la huella de tu dispositivo, solo lo que escribes aquí y el número de versión.',
+      errPick: 'Elige primero un motivo.', errFail: 'No se pudo enviar, inténtalo de nuevo en un momento.', errRate: 'Has enviado varias veces, inténtalo más tarde.', sending: 'Enviando…',
+      thanksH: 'Gracias', thanksSent: 'Tus comentarios llegaron al equipo. Si algún día vuelves a necesitar la extensión, siempre serás bienvenido.', thanksSkip: 'No pasa nada. Si algún día vuelves a necesitar la extensión, siempre serás bienvenido.',
+      reinstall: 'Reinstalar la extensión', contact: 'Contáctanos por WhatsApp',
+      waMsg: 'Hola, desinstalé el Asistente de Impresión Inteligente y me gustaría recibir ayuda.'
     }
   };
+  var LANGS = ['ar', 'en', 'es'];
 
   var KEY = 'privacy_lang';
   var q = new URLSearchParams(location.search);
@@ -186,9 +212,10 @@
 
   function pick() {
     var l = q.get('lang');
-    if (l === 'ar' || l === 'en') return l;
-    try { var s = localStorage.getItem(KEY); if (s === 'ar' || s === 'en') return s; } catch (e) {}
-    return /^ar\b/i.test(navigator.language || '') ? 'ar' : 'en';
+    if (LANGS.indexOf(l) >= 0) return l;
+    try { var s = localStorage.getItem(KEY); if (LANGS.indexOf(s) >= 0) return s; } catch (e) {}
+    var nl = navigator.language || '';
+    return /^ar\b/i.test(nl) ? 'ar' : /^es\b/i.test(nl) ? 'es' : 'en';
   }
   function $(id) { return document.getElementById(id); }
   function chosen() { var r = document.querySelector('input[name="reason"]:checked'); return r ? r.value : ''; }
@@ -202,9 +229,8 @@
     for (var i = 0; i < els.length; i++) els[i].textContent = t[els[i].getAttribute('data-t')];
     $('details').placeholder = t.detailsPh;
     var btn = $('lang-btn');
-    btn.textContent = ar ? 'EN' : 'ع';
-    btn.className = 'lang-btn' + (ar ? '' : ' to-ar');
-    btn.setAttribute('aria-label', ar ? 'Switch to English' : 'التبديل إلى العربية');
+    btn.value = lang;
+    btn.className = 'lang-btn' + (ar ? ' to-ar' : '');
 
     var box = $('reasons');
     var legend = box.querySelector('legend');
@@ -236,8 +262,8 @@
     window.scrollTo(0, 0);
   }
 
-  $('lang-btn').addEventListener('click', function () {
-    lang = lang === 'ar' ? 'en' : 'ar';
+  $('lang-btn').addEventListener('change', function () {
+    lang = LANGS.indexOf(this.value) >= 0 ? this.value : 'en';
     try { localStorage.setItem(KEY, lang); } catch (e) {}
     render();
   });
