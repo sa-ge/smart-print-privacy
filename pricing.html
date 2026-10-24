@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>الأسعار - مساعد الطباعة الذكي</title>
-<meta name="description" content="أسعار اشتراك مساعد الطباعة الذكي - Pricing for Smart Print Assistant – Print from WhatsApp Web">
+<title>الأسعار - مساعد الطباعة واتساب ويب</title>
+<meta name="description" content="أسعار اشتراك مساعد الطباعة واتساب ويب - Pricing for WA WEB PLUS – Print from WhatsApp Web">
 <link rel="icon" type="image/png" href="logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,7 +34,7 @@
   /* ── الشريط العلوي ── */
   .topbar{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding-block:18px; }
   .brand{ display:flex; align-items:center; gap:12px; min-width:0; }
-  .brand img{ width:44px; height:44px; flex:none; }
+  .brand img{ width:48px; height:48px; flex:none; border-radius:12px; }
   .brand-name{ font-weight:800; font-size:16px; line-height:1.3; }
   .brand-sub{ font-size:12px; color:var(--text-2); line-height:1.3; }
   .lang-btn{
@@ -168,7 +168,7 @@
 <div class="wrap">
   <header class="topbar">
     <div class="brand">
-      <img src="logo.png" alt="" width="44" height="44">
+      <img src="logo.png" alt="WA WEB PLUS" width="48" height="48">
       <div>
         <div class="brand-name" data-t="brand"></div>
         <div class="brand-sub" data-t="brandSub"></div>
@@ -229,7 +229,7 @@
 
 <script>
 (function () {
-  var NUM = { 1: [80, 120], 2: [140, 240], 3: [180, 300], 4: [220, 360], 5: [250, 400] };   // [6 أشهر, سنة] لكل عدد أجهزة
+  var PL = { b: { m: 8, y: 66, n: 1, d: 3 }, p: { m: 13, y: 114, n: 2, d: 6 } };   // دولار أمريكي: [شهري, سنوي] لكل باقة (n أرقام واتساب، d أجهزة)
   var PHONE = '966547984534';
   var STORE_URL = 'https://chromewebstore.google.com/detail/print-whatsapp-web-files/oapemmjnpbgfnmhgmfohibggfgeafmah';   // رابط الإضافة في متجر Chrome: زر التجربة «ثبّت الإضافة» (فارغ = رسالة واتساب بدلاً منه)
   var CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
@@ -240,40 +240,31 @@
 
   var T = {
     ar: {
-      title: 'الأسعار - مساعد الطباعة الذكي',
-      brand: 'مساعد الطباعة الذكي', brandSub: 'اطبع من واتساب ويب',
+      title: 'الأسعار - مساعد الطباعة واتساب ويب',
+      brand: 'مساعد الطباعة واتساب ويب', brandSub: 'اطبع من واتساب ويب',
       h1: 'أسعار بسيطة وواضحة',
-      heroText: 'ابدأ بتجربة مجانية، ثم اختر المدة التي تناسبك. كود اشتراك واحد، وكل المزايا في كل باقة.',
+      heroText: 'الإضافة مجانية بمزايا واتساب ويب كاملة. وللطباعة المباشرة على طابعتك اختر الباقة المدفوعة التي تناسبك.',
       devLabel: 'عدد الأجهزة (للباقتين المدفوعتين)',
       dev: function (n) { return String(n); },
-      cur: 'ريال', perMonth: 'ريال / شهر', perDev: 'ريال / جهاز / شهر', monthly: 'يعادل',
-      save: function (n, pct) { return 'وفّر ' + n + ' ريال (' + pct + '٪) مقارنةً بدفعتين نصف سنويتين'; },
-      p0: { name: 'تجربة مجانية', sub: 'جرّب كل المزايا قبل أن تشترك.', price: 'مجاناً', per: '7 أيام · جهاز واحد · بلا دفع', cta: 'ابدأ التجربة', ctaStore: 'ثبّت الإضافة وابدأ التجربة', note: 'تبدأ من داخل الإضافة برقم واتساب (مرة لكل رقم)', msg: 'السلام عليكم، أرغب بتجربة مساعد الطباعة الذكي مجاناً.' },
+      cur: 'دولار', perMonth: 'دولار / شهر', perDev: 'دولار / جهاز / شهر', monthly: 'يعادل',
+      save: function (n, pct) { return 'وفّر ' + n + ' دولار (' + pct + '٪) مقارنةً بدفعتين نصف سنويتين'; },
+      p0: { name: 'مجانية', sub: 'كل مزايا واتساب ويب مجاناً للأبد، والطباعة المباشرة تجربة 7 أيام.', price: 'مجاناً للأبد', per: 'بلا دفع · جهاز واحد', cta: 'ابدأ مجاناً', ctaStore: 'ثبّت الإضافة مجاناً', note: 'تجربة الطباعة 7 أيام تبدأ من داخل الإضافة برقم واتساب (مرة لكل رقم)', msg: 'السلام عليكم، أرغب بتجربة مساعد الطباعة واتساب ويب مجاناً.' },
       p6: { name: '6 أشهر', sub: 'مناسبة لتجربة أطول بدون التزام سنوي.', per: 'لكل 6 أشهر', cta: 'اطلب هذه الباقة', note: 'جرّبها مجاناً 7 أيام قبل الاشتراك' },
       p12: { name: 'سنة', sub: 'الأوفر: دفعة واحدة وخصم على الدفعتين.', per: 'لكل سنة', cta: 'اطلب هذه الباقة', note: 'جرّبها مجاناً 7 أيام قبل الاشتراك', rec: 'الأوفر' },
       msg: function (n, p) {
         var d = n === 1 ? 'جهاز واحد' : n === 2 ? 'جهازين' : n + ' أجهزة';
-        return 'السلام عليكم، أرغب بالاشتراك في مساعد الطباعة الذكي: ' + d + ' - ' + (p === 12 ? 'سنة' : '6 أشهر') + '.';
+        return 'السلام عليكم، أرغب بالاشتراك في مساعد الطباعة واتساب ويب: ' + d + ' - ' + (p === 12 ? 'سنة' : '6 أشهر') + '.';
       },
       featHead: 'المزايا',
       plusHead: 'ما تحصل عليه',
-      trialPlus: ['كل المزايا لمدة 7 أيام', 'جهاز واحد', 'بلا بطاقة ولا دفع'],
+      trialPlus: ["مجاني للأبد", "بلا بطاقة ولا دفع", "تجربة الطباعة 7 أيام مجاناً"],
       paidPlus: function (n, m) { return ['كود اشتراك واحد يعمل على ' + (n === 1 ? 'جهاز واحد' : n === 2 ? 'جهازين' : n + ' أجهزة'), 'تحديثات ودعم فني لمدة ' + m, 'تذكير داخل الإضافة قبل انتهاء الاشتراك']; },
       months6: '6 أشهر', months12: 'سنة كاملة',
-      feats: [
-        ['طباعة مباشرة من واتساب ويب', 'صور وملفات PDF ومستندات بنقرات قليلة.'],
-        ['طباعة عدة ملفات دفعة واحدة', 'حدّد عدة ملفات واضبط النسخ والألوان والوجهين.'],
-        ['عدة صفحات في ورقة واحدة', '2 أو 4 صفحات في الورقة لتوفير الورق.'],
-        ['أدوات الصور', 'قص وتدوير وعكس، ومحرر بأسلوب الرسام.'],
-        ['أدوات PDF', 'تحويل الصور إلى PDF وتبسيط الملفات الكبيرة.'],
-        ['تقارير الطباعة', 'عدد الصفحات والأبيض والملون لكل عميل.'],
-        ['تذكيرات العملاء', 'موعد لكل عميل يظهر لك داخل واتساب.'],
-        ['رسائل سريعة ومحادثة سريعة', 'ردود جاهزة، وفتح محادثة برقم غير محفوظ.'],
-        ['حفظ أرقام العملاء وتصديرها', 'حفظ بنقرة وتصدير إلى Excel.'],
-        ['واجهة بالعربية والإنجليزية والإسبانية', 'بدّل اللغة متى شئت.']
-      ],
-      vat: 'الأسعار بالريال السعودي.',
-      whyTitle: 'لماذا مساعد الطباعة الذكي',
+      feats: [["طباعة مباشرة بنقرة واحدة", "صور وPDF وWord وPowerPoint مباشرة إلى طابعتك."], ["طباعة عدة ملفات دفعة واحدة", "مع النسخ والألوان والوجهين وحجم الورق."], ["عدة صفحات في ورقة", "2 أو 4 في الورقة مع معاينة."], ["إعدادات لكل طابعة", "وطابور مستقل لكل طابعة."], ["سكانر وأدوات الصور", "تحويل الصورة لمستند ممسوح، وقص ذكي، وعكس، ومحرر بأسلوب الرسام."], ["أدوات PDF", "صور إلى PDF، وPDF إلى صور، ودمج وضغط."], ["تقارير الطباعة", "أبيض وملون لكل عميل وطابعة، مع تصدير."], ["تصنيف العملاء", "VIP ومنتظم وعرضي تلقائياً."], ["تصدير أرقام العملاء", "Excel وCSV وvCard وHTML."]],
+      freeFeats: [["عرض ملفات المحادثة", "لوحة جانبية بالصور وPDF وWord والفيديو مع تنزيل تلقائي وعدد الصفحات."], ["فتح الملفات والصور بلا تحميل", "معاينة فورية دون حفظ على الجهاز."], ["بحث وفلترة", "بالاسم أو الرقم أو النوع أو المدة."], ["تذكيرات العملاء", "موعد وملاحظة لكل عميل داخل واتساب."], ["رسائل سريعة ومحادثة سريعة", "ردود جاهزة، وفتح محادثة برقم غير محفوظ."], ["حفظ الأرقام", "بنقرة أو تلقائياً."], ["تصدير الدردشات", "TXT وHTML وExcel وCSV وJSON."], ["مزايا واتساب ويب", "ترجمة، وحالة الاتصال، وتثبيت غير محدود، وتمويه الخصوصية، وخلفيات."], ["ثلاث لغات ووضع ليلي", "العربية والإنجليزية والإسبانية."]],
+      allFree: "كل مزايا الباقة المجانية", featFree: "المزايا المجانية", featPaid: "مزايا الطباعة (المدفوعة)",
+      vat: 'الأسعار بالدولار الأمريكي (USD).',
+      whyTitle: 'لماذا مساعد الطباعة واتساب ويب',
       why: [
         [ICON_SHIELD, 'ملفاتك تبقى عندك', 'الطباعة والمعالجة تتمان على جهازك محلياً، ولا تُرفع ملفاتك أو صورك إلى أي خادم.'],
         [ICON_BOLT, 'أسرع في العمل اليومي', 'اطبع ما يصلك من العملاء مباشرة من المحادثة بدل تنزيله وفتحه ثم طباعته.'],
@@ -282,7 +273,7 @@
       faqTitle: 'الأسئلة الشائعة',
       faqSub: 'إجابات سريعة قبل أن تشترك.',
       faq: [
-        ['هل توجد تجربة مجانية؟', 'نعم، 7 أيام مجانية تبدأ من داخل الإضافة نفسها، دون دفع. بعدها تقرّر إن كنت تريد الاشتراك.'],
+        ['هل الإضافة مجانية؟', 'نعم. عرض الملفات وفتحها بلا تحميل، والتذكيرات، وتصدير الدردشات، ومزايا واتساب ويب كلها مجانية للأبد. الطباعة المباشرة وأدواتها مدفوعة، وتجربها مجاناً 7 أيام.'],
         ['ما الفرق بين باقة 6 أشهر وباقة السنة؟', 'المزايا نفسها. الفرق في المدة والسعر: السنة أوفر من دفعتين نصف سنويتين، وتختار عدد الأجهزة الذي يناسبك لكل منهما.'],
         ['كيف أشترك وأحصل على الكود؟', 'اضغط «اطلب هذه الباقة» لتفتح لك محادثة واتساب برسالة جاهزة. بعد إتمام الاشتراك نرسل لك كود الاشتراك لتُدخله في الإضافة.'],
         ['هل تُرفع ملفاتي إلى خادم؟', 'لا. الطباعة ومعالجة الملفات تتمان على جهازك. التفاصيل في <a data-privacy href="./">سياسة الخصوصية</a>.'],
@@ -295,39 +286,30 @@
       privacy: 'سياسة الخصوصية'
     },
     en: {
-      title: 'Pricing - Smart Print Assistant',
-      brand: 'Smart Print Assistant', brandSub: 'Print from WhatsApp Web',
+      title: 'Pricing - WA WEB PLUS',
+      brand: 'WA WEB PLUS', brandSub: 'Print from WhatsApp Web',
       h1: 'Simple, transparent pricing',
-      heroText: 'Start with a free trial, then pick the period that suits you. One subscription code, and every feature in every plan.',
+      heroText: 'The extension is free with all WhatsApp Web features. For direct printing to your printer, pick the paid plan that suits you.',
       devLabel: 'Number of computers (for the two paid plans)',
       dev: function (n) { return String(n); },
-      cur: 'SAR', perMonth: 'SAR / month', perDev: 'SAR / computer / month', monthly: 'About',
-      save: function (n, pct) { return 'Save ' + n + ' SAR (' + pct + '%) vs. two 6-month payments'; },
-      p0: { name: 'Free trial', sub: 'Try every feature before you subscribe.', price: 'Free', per: '7 days · 1 computer · no payment', cta: 'Start the trial', ctaStore: 'Install the extension and start', note: 'Starts inside the extension with your WhatsApp number (once per number)', msg: 'Hello, I would like to try Smart Print Assistant for free.' },
+      cur: 'USD', perMonth: 'USD / month', perDev: 'USD / computer / month', monthly: 'About',
+      save: function (n, pct) { return 'Save ' + n + ' USD (' + pct + '%) vs. two 6-month payments'; },
+      p0: { name: 'Free', sub: 'Every WhatsApp Web feature free forever, plus a 7-day direct printing trial.', price: 'Free forever', per: 'No payment · 1 computer', cta: 'Start free', ctaStore: 'Install the extension free', note: 'The 7-day printing trial starts inside the extension with your WhatsApp number (once per number)', msg: 'Hello, I would like to try WA WEB PLUS for free.' },
       p6: { name: '6 months', sub: 'For a longer run without a yearly commitment.', per: 'per 6 months', cta: 'Order this plan', note: 'Try it free for 7 days before subscribing' },
       p12: { name: '1 year', sub: 'Best value: one payment, cheaper than two halves.', per: 'per year', cta: 'Order this plan', note: 'Try it free for 7 days before subscribing', rec: 'Best value' },
       msg: function (n, p) {
-        return 'Hello, I would like to subscribe to Smart Print Assistant: ' + n + (n === 1 ? ' computer' : ' computers') + ' - ' + (p === 12 ? '1 year' : '6 months') + '.';
+        return 'Hello, I would like to subscribe to WA WEB PLUS: ' + n + (n === 1 ? ' computer' : ' computers') + ' - ' + (p === 12 ? '1 year' : '6 months') + '.';
       },
       featHead: 'Features',
       plusHead: 'What you get',
-      trialPlus: ['Every feature for 7 days', '1 computer', 'No card, no payment'],
+      trialPlus: ["Free forever", "No card, no payment", "7-day printing trial included"],
       paidPlus: function (n, m) { return ['One subscription code for ' + (n === 1 ? '1 computer' : n + ' computers'), 'Updates and support for ' + m, 'Reminder inside the extension before it ends']; },
       months6: '6 months', months12: 'a full year',
-      feats: [
-        ['Print straight from WhatsApp Web', 'Photos, PDFs and documents in a few clicks.'],
-        ['Print several files at once', 'Select files and set copies, color and two-sided.'],
-        ['Several pages on one sheet', '2 or 4 pages per sheet to save paper.'],
-        ['Image tools', 'Crop, rotate, invert, plus a paint-style editor.'],
-        ['PDF tools', 'Turn images into PDF and simplify large files.'],
-        ['Print reports', 'Pages, black & white and color per client.'],
-        ['Client reminders', 'A date per client that shows inside WhatsApp.'],
-        ['Quick messages and quick chat', 'Canned replies, and open a chat with an unsaved number.'],
-        ['Save and export client numbers', 'Save in one click and export to Excel.'],
-        ['Arabic, English and Spanish interface', 'Switch language any time.']
-      ],
-      vat: 'Prices are in Saudi riyals (SAR).',
-      whyTitle: 'Why Smart Print Assistant',
+      feats: [["One-click direct printing", "Photos, PDF, Word and PowerPoint straight to your printer."], ["Print many files at once", "With copies, color, two-sided and paper size."], ["Several pages per sheet", "2 or 4 per sheet with preview."], ["Per-printer settings", "And a separate queue for each printer."], ["Scanner and image tools", "Photo-to-scan, smart crop, invert and a paint-style editor."], ["PDF tools", "Images to PDF, PDF to images, merge and compress."], ["Print reports", "B&W and color per customer and printer, with export."], ["Customer segments", "VIP, regular, occasional — automatically."], ["Export customer numbers", "Excel, CSV, vCard and HTML."]],
+      freeFeats: [["Chat files panel", "Side panel with photos, PDF, Word and video, auto-download and page count."], ["Open files and images without downloading", "Instant preview, nothing saved."], ["Search and filters", "By name, number, type or date range."], ["Customer reminders", "A date and note per customer inside WhatsApp."], ["Quick replies and quick chat", "Ready replies, and chat with unsaved numbers."], ["Save numbers", "In one click or automatically."], ["Export chats", "TXT, HTML, Excel, CSV and JSON."], ["WhatsApp Web extras", "Translation, online status, unlimited pins, privacy blur and backgrounds."], ["Three languages and dark mode", "Arabic, English and Spanish."]],
+      allFree: "Everything in Free", featFree: "Free features", featPaid: "Printing features (paid)",
+      vat: 'Prices are in US dollars (USD).',
+      whyTitle: 'Why WA WEB PLUS',
       why: [
         [ICON_SHIELD, 'Your files stay with you', 'Processing and printing happen locally on your computer. Your files and photos are never uploaded to any server.'],
         [ICON_BOLT, 'Faster daily work', 'Print what clients send straight from the chat instead of downloading, opening and then printing.'],
@@ -336,6 +318,7 @@
       faqTitle: 'Frequently asked questions',
       faqSub: 'Quick answers before you subscribe.',
       faq: [
+        ['Is the extension free?', 'Yes. Viewing and opening files without downloading, reminders, chat export and the WhatsApp Web extras are free forever. Direct printing and its tools are paid, with a free 7-day trial.'],
         ['Is there a free trial?', 'Yes, 7 free days that start from inside the extension itself, with no payment. Afterwards you decide whether to subscribe.'],
         ['What is the difference between 6 months and 1 year?', 'The same features. Only the period and price differ: the year is cheaper than two 6-month payments, and you pick the number of computers for either.'],
         ['How do I subscribe and get my code?', 'Press “Order this plan” to open a WhatsApp chat with a ready message. Once the subscription is completed we send you the subscription code to enter in the extension.'],
@@ -347,42 +330,33 @@
       ctTitle: 'Questions before subscribing?',
       ctText: 'Message us and we will reply. To subscribe, or to get a quote for more computers, write to us and we will send your subscription code.',
       privacy: 'Privacy Policy',
-      waAsk: 'Hello, I would like to ask about a Smart Print Assistant subscription.'
+      waAsk: 'Hello, I would like to ask about a WA WEB PLUS subscription.'
     },
     es: {
-      title: 'Precios - Asistente de Impresión Inteligente',
-      brand: 'Asistente de Impresión Inteligente', brandSub: 'Imprime desde WhatsApp Web',
+      title: 'Precios - WA WEB PLUS',
+      brand: 'WA WEB PLUS', brandSub: 'Imprime desde WhatsApp Web',
       h1: 'Precios simples y claros',
-      heroText: 'Empieza con una prueba gratuita y luego elige el periodo que te convenga. Un solo código de suscripción y todas las funciones en cada plan.',
+      heroText: 'La extensión es gratis con todas las funciones de WhatsApp Web. Para imprimir directamente en tu impresora, elige el plan de pago que te convenga.',
       devLabel: 'Número de ordenadores (para los dos planes de pago)',
       dev: function (n) { return String(n); },
-      cur: 'SAR', perMonth: 'SAR / mes', perDev: 'SAR / ordenador / mes', monthly: 'Unos',
-      save: function (n, pct) { return 'Ahorra ' + n + ' SAR (' + pct + ' %) frente a dos pagos semestrales'; },
-      p0: { name: 'Prueba gratuita', sub: 'Prueba todas las funciones antes de suscribirte.', price: 'Gratis', per: '7 días · 1 ordenador · sin pago', cta: 'Empezar la prueba', ctaStore: 'Instala la extensión y empieza', note: 'Empieza dentro de la extensión con tu número de WhatsApp (una vez por número)', msg: 'Hola, me gustaría probar gratis el Asistente de Impresión Inteligente.' },
+      cur: 'USD', perMonth: 'USD / mes', perDev: 'USD / ordenador / mes', monthly: 'Unos',
+      save: function (n, pct) { return 'Ahorra ' + n + ' USD (' + pct + ' %) frente a dos pagos semestrales'; },
+      p0: { name: 'Gratis', sub: 'Todas las funciones de WhatsApp Web gratis para siempre, más 7 días de prueba de impresión directa.', price: 'Gratis para siempre', per: 'Sin pago · 1 ordenador', cta: 'Empezar gratis', ctaStore: 'Instala la extensión gratis', note: 'La prueba de impresión de 7 días empieza dentro de la extensión con tu número de WhatsApp (una vez por número)', msg: 'Hola, me gustaría probar gratis el WA WEB PLUS.' },
       p6: { name: '6 meses', sub: 'Para un uso más largo sin compromiso anual.', per: 'cada 6 meses', cta: 'Pedir este plan', note: 'Pruébalo gratis 7 días antes de suscribirte' },
       p12: { name: '1 año', sub: 'El más rentable: un solo pago, más barato que dos semestres.', per: 'al año', cta: 'Pedir este plan', note: 'Pruébalo gratis 7 días antes de suscribirte', rec: 'El más rentable' },
       msg: function (n, p) {
-        return 'Hola, quiero suscribirme al Asistente de Impresión Inteligente: ' + n + (n === 1 ? ' ordenador' : ' ordenadores') + ' - ' + (p === 12 ? '1 año' : '6 meses') + '.';
+        return 'Hola, quiero suscribirme al WA WEB PLUS: ' + n + (n === 1 ? ' ordenador' : ' ordenadores') + ' - ' + (p === 12 ? '1 año' : '6 meses') + '.';
       },
       featHead: 'Funciones',
       plusHead: 'Qué incluye',
-      trialPlus: ['Todas las funciones durante 7 días', '1 ordenador', 'Sin tarjeta ni pago'],
+      trialPlus: ["Gratis para siempre", "Sin tarjeta ni pago", "Prueba de impresión de 7 días incluida"],
       paidPlus: function (n, m) { return ['Un código de suscripción para ' + (n === 1 ? '1 ordenador' : n + ' ordenadores'), 'Actualizaciones y soporte durante ' + m, 'Recordatorio dentro de la extensión antes de que termine']; },
       months6: '6 meses', months12: 'un año completo',
-      feats: [
-        ['Imprime directamente desde WhatsApp Web', 'Fotos, PDF y documentos en pocos clics.'],
-        ['Imprime varios archivos a la vez', 'Selecciona archivos y ajusta copias, color y doble cara.'],
-        ['Varias páginas en una hoja', '2 o 4 páginas por hoja para ahorrar papel.'],
-        ['Herramientas de imagen', 'Recortar, girar, invertir y un editor al estilo Paint.'],
-        ['Herramientas PDF', 'Convierte imágenes a PDF y simplifica archivos grandes.'],
-        ['Informes de impresión', 'Páginas, blanco y negro y color por cliente.'],
-        ['Recordatorios de clientes', 'Una cita por cliente que aparece dentro de WhatsApp.'],
-        ['Mensajes rápidos y chat rápido', 'Respuestas listas y abrir un chat con un número no guardado.'],
-        ['Guarda y exporta números de clientes', 'Guarda con un clic y exporta a Excel.'],
-        ['Interfaz en árabe, inglés y español', 'Cambia de idioma cuando quieras.']
-      ],
-      vat: 'Los precios están en riales saudíes (SAR).',
-      whyTitle: 'Por qué el Asistente de Impresión Inteligente',
+      feats: [["Impresión directa con un clic", "Fotos, PDF, Word y PowerPoint directo a tu impresora."], ["Imprimir varios archivos a la vez", "Con copias, color, doble cara y tamaño de papel."], ["Varias páginas por hoja", "2 o 4 por hoja con vista previa."], ["Ajustes por impresora", "Y una cola para cada impresora."], ["Escáner y herramientas de imagen", "Foto a escaneo, recorte inteligente, invertir y editor tipo Paint."], ["Herramientas PDF", "Imágenes a PDF, PDF a imágenes, unir y comprimir."], ["Informes de impresión", "B/N y color por cliente e impresora, con exportación."], ["Clasificación de clientes", "VIP, habitual, ocasional, automáticamente."], ["Exportar números de clientes", "Excel, CSV, vCard y HTML."]],
+      freeFeats: [["Panel de archivos del chat", "Fotos, PDF, Word y vídeo con descarga automática y número de páginas."], ["Abrir archivos e imágenes sin descargar", "Vista previa al instante."], ["Búsqueda y filtros", "Por nombre, número, tipo o fechas."], ["Recordatorios de clientes", "Fecha y nota por cliente dentro de WhatsApp."], ["Respuestas y chat rápidos", "Respuestas listas y chat con números no guardados."], ["Guardar números", "Con un clic o automáticamente."], ["Exportar chats", "TXT, HTML, Excel, CSV y JSON."], ["Extras de WhatsApp Web", "Traducción, estado en línea, fijados ilimitados, desenfoque de privacidad y fondos."], ["Tres idiomas y modo oscuro", "Árabe, inglés y español."]],
+      allFree: "Todo lo del plan Gratis", featFree: "Funciones gratis", featPaid: "Funciones de impresión (de pago)",
+      vat: 'Los precios están en dólares estadounidenses (USD).',
+      whyTitle: 'Por qué el WA WEB PLUS',
       why: [
         [ICON_SHIELD, 'Tus archivos se quedan contigo', 'El procesamiento y la impresión ocurren localmente en tu ordenador. Tus archivos y fotos nunca se suben a ningún servidor.'],
         [ICON_BOLT, 'Trabajo diario más rápido', 'Imprime lo que te envían los clientes directamente desde el chat en lugar de descargarlo, abrirlo y luego imprimirlo.'],
@@ -391,6 +365,7 @@
       faqTitle: 'Preguntas frecuentes',
       faqSub: 'Respuestas rápidas antes de suscribirte.',
       faq: [
+        ['¿La extensión es gratis?', 'Sí. Ver y abrir archivos sin descargarlos, recordatorios, exportar chats y los extras de WhatsApp Web son gratis para siempre. La impresión directa y sus herramientas son de pago, con 7 días de prueba gratis.'],
         ['¿Hay una prueba gratuita?', 'Sí, 7 días gratis que empiezan desde la propia extensión, sin pago. Después decides si quieres suscribirte.'],
         ['¿Qué diferencia hay entre 6 meses y 1 año?', 'Las mismas funciones. Solo cambian el periodo y el precio: el año sale más barato que dos pagos semestrales, y eliges el número de ordenadores en cualquiera de los dos.'],
         ['¿Cómo me suscribo y obtengo mi código?', 'Pulsa «Pedir este plan» para abrir un chat de WhatsApp con un mensaje listo. Cuando se complete la suscripción te enviamos el código de suscripción para introducirlo en la extensión.'],
@@ -402,14 +377,46 @@
       ctTitle: '¿Preguntas antes de suscribirte?',
       ctText: 'Escríbenos y te responderemos. Para suscribirte, o para pedir un presupuesto para más ordenadores, escríbenos y te enviaremos tu código de suscripción.',
       privacy: 'Política de privacidad',
-      waAsk: 'Hola, me gustaría preguntar por una suscripción al Asistente de Impresión Inteligente.'
+      waAsk: 'Hola, me gustaría preguntar por una suscripción al WA WEB PLUS.'
     }
   };
-  T.ar.waAsk = 'السلام عليكم، أرغب بالاستفسار عن اشتراك مساعد الطباعة الذكي.';
+  T.ar.waAsk = 'السلام عليكم، أرغب بالاستفسار عن اشتراك مساعد الطباعة واتساب ويب.';
+  var X = {
+    ar: { devLabel: 'طريقة الدفع', mo: 'شهري', yr: 'سنوي', perM: 'شهرياً', perY: 'سنوياً', eq: 'يعادل', perMonth: 'دولار / شهر',
+      save: function (n, p) { return 'وفّر ' + n + ' دولار (' + p + '٪) مقارنة بالشهري'; },
+      b: { name: 'الأساسية', sub: 'لمكتبة برقم واتساب واحد.' }, p: { name: 'الأعمال', sub: 'لمكتبة برقمين واتساب أو أكثر من فرع.', rec: 'الأفضل للمكتبات' },
+      cta: 'اطلب هذه الباقة', note: 'جرّب الطباعة مجاناً 7 أيام قبل الاشتراك',
+      plus: function (k) { var c = PL[k]; return [(c.n === 1 ? 'رقم واتساب واحد' : 'رقمان واتساب'), 'حتى ' + c.d + ' أجهزة', 'تحديثات ودعم فني طوال الاشتراك']; },
+      msg: function (k, y) { return 'السلام عليكم، أرغب بالاشتراك في مساعد الطباعة واتساب ويب: باقة ' + X.ar[k].name + ' - ' + (y ? 'سنوي' : 'شهري') + '.'; },
+      faqPlans: ['ما الفرق بين الأساسية والأعمال؟', 'المزايا نفسها. الأساسية لرقم واتساب واحد وحتى 3 أجهزة، والأعمال لرقمين واتساب وحتى 6 أجهزة. ويمكنك الدفع شهرياً أو سنوياً بخصم.'],
+      faqMore: ['أحتاج أكثر من رقمين أو 6 أجهزة؟', 'راسلنا على واتساب وسنرسل لك عرض سعر مناسباً.'] },
+    en: { devLabel: 'Billing', mo: 'Monthly', yr: 'Yearly', perM: 'per month', perY: 'per year', eq: 'About', perMonth: 'USD / month',
+      save: function (n, p) { return 'Save ' + n + ' USD (' + p + '%) vs. monthly'; },
+      b: { name: 'Basic', sub: 'For a shop with one WhatsApp number.' }, p: { name: 'Business', sub: 'For two WhatsApp numbers or more than one branch.', rec: 'Best for shops' },
+      cta: 'Order this plan', note: 'Try printing free for 7 days before subscribing',
+      plus: function (k) { var c = PL[k]; return [(c.n === 1 ? '1 WhatsApp number' : '2 WhatsApp numbers'), 'Up to ' + c.d + ' computers', 'Updates and support while subscribed']; },
+      msg: function (k, y) { return 'Hello, I would like to subscribe to WA WEB PLUS: ' + X.en[k].name + ' plan - ' + (y ? 'yearly' : 'monthly') + '.'; },
+      faqPlans: ['What is the difference between Basic and Business?', 'Same features. Basic covers 1 WhatsApp number and up to 3 computers; Business covers 2 numbers and up to 6 computers. Pay monthly, or yearly at a discount.'],
+      faqMore: ['Need more than 2 numbers or 6 computers?', 'Message us on WhatsApp and we will send you a quote.'] },
+    es: { devLabel: 'Facturación', mo: 'Mensual', yr: 'Anual', perM: 'al mes', perY: 'al año', eq: 'Unos', perMonth: 'USD / mes',
+      save: function (n, p) { return 'Ahorra ' + n + ' USD (' + p + ' %) frente al mensual'; },
+      b: { name: 'Básico', sub: 'Para una tienda con un número de WhatsApp.' }, p: { name: 'Negocio', sub: 'Para dos números de WhatsApp o más de una sucursal.', rec: 'Ideal para tiendas' },
+      cta: 'Pedir este plan', note: 'Prueba la impresión gratis 7 días antes de suscribirte',
+      plus: function (k) { var c = PL[k]; return [(c.n === 1 ? '1 número de WhatsApp' : '2 números de WhatsApp'), 'Hasta ' + c.d + ' ordenadores', 'Actualizaciones y soporte durante la suscripción']; },
+      msg: function (k, y) { return 'Hola, me gustaría suscribirme al WA WEB PLUS: plan ' + X.es[k].name + ' - ' + (y ? 'anual' : 'mensual') + '.'; },
+      faqPlans: ['¿Qué diferencia hay entre Básico y Negocio?', 'Las mismas funciones. Básico: 1 número de WhatsApp y hasta 3 ordenadores; Negocio: 2 números y hasta 6 ordenadores. Paga mensual o anual con descuento.'],
+      faqMore: ['¿Necesitas más de 2 números o 6 ordenadores?', 'Escríbenos por WhatsApp y te enviaremos un presupuesto.'] }
+  };
+  ['ar', 'en', 'es'].forEach(function (l) {
+    var t = T[l], x = X[l]; t.devLabel = x.devLabel; t.perMonth = x.perMonth;
+    t.faq = t.faq.map(function (q, i) { return i === 2 ? x.faqPlans : q; });
+    t.faq[t.faq.length - 1] = x.faqMore;
+  });
+
 
   var KEY = 'privacy_lang';
   var LANGS = ['ar', 'en', 'es'];
-  var lang = pick(), devices = 1;
+  var lang = pick(), yearly = true;
 
   function pick() {
     var q = /[?&]lang=(ar|en|es)\b/.exec(location.search);
@@ -420,31 +427,29 @@
   }
   function fmt(x) { return (Math.round(x * 10) / 10).toString(); }
   function waUrl(text) { return 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(text); }
-  function pct(n) { return Math.round((NUM[n][0] * 2 - NUM[n][1]) / (NUM[n][0] * 2) * 100); }
+  
   function li(cls, inner) { return '<li' + (cls ? ' class="' + cls + '"' : '') + '>' + CHECK + '<span>' + inner + '</span></li>'; }
 
-  function featuresHtml(t, plus) {
+  function featuresHtml(t, plus, list, head) {
     var top = plus.map(function (p) { return li('plus', '<b>' + p + '</b>'); }).join('');
-    var all = t.feats.map(function (f) { return li('', '<b>' + f[0] + '</b> — <span class="why">' + f[1] + '</span>'); }).join('');
+    var all = list.map(function (f) { return li('', '<b>' + f[0] + '</b> — <span class="why">' + f[1] + '</span>'); }).join('');
     return '<div class="feat-head">' + t.plusHead + '</div><ul class="feat">' + top + '</ul>' +
-           '<div class="feat-head">' + t.featHead + '</div><ul class="feat">' + all + '</ul>';
+           '<div class="feat-head">' + head + '</div><ul class="feat">' + all + '</ul>';
   }
 
-  function paidCard(t, period) {
-    var n = devices, p6 = NUM[n][0], p12 = NUM[n][1], year = period === 12;
-    var P = year ? t.p12 : t.p6, price = year ? p12 : p6, months = year ? 12 : 6, saving = p6 * 2 - p12;
-    return '<div class="plan' + (year ? ' rec' : '') + '">' +
-      (year ? '<span class="rec-badge">' + t.p12.rec + '</span>' : '') +
-      '<h3 class="plan-name">' + P.name + '</h3><div class="plan-sub">' + P.sub + '</div>' +
+  function paidCard(t, k) {
+    var x = X[lang], c = PL[k], rec = k === 'p', price = yearly ? c.y : c.m, full = c.m * 12, saving = full - c.y;
+    return '<div class="plan' + (rec ? ' rec' : '') + '">' +
+      (rec ? '<span class="rec-badge">' + x.p.rec + '</span>' : '') +
+      '<h3 class="plan-name">' + x[k].name + '</h3><div class="plan-sub">' + x[k].sub + '</div>' +
       '<div class="price-block"><div class="price"><span class="price-num">' + price + '</span><span class="price-cur">' + t.cur + '</span>' +
-      (year ? '<span class="price-old">' + (p6 * 2) + '</span>' : '') + '</div>' +
-      '<div class="price-per"><div>' + P.per + '</div>' +
-      '<div>' + t.monthly + ' <b>' + fmt(price / months) + '</b> ' + t.perMonth + '</div>' +
-      (n > 1 ? '<div>' + t.monthly + ' <b>' + fmt(price / months / n) + '</b> ' + t.perDev + '</div>' : '') + '</div>' +
-      (year && saving > 0 ? '<span class="save-chip">' + t.save(saving, pct(n)) + '</span>' : '') + '</div>' +
-      '<a class="cta' + (year ? '' : ' alt') + '" target="_blank" rel="noopener" href="' + waUrl(t.msg(n, period)) + '">' + WA + '<span>' + P.cta + '</span></a>' +
-      '<p class="trial-note">' + P.note + '</p>' +
-      featuresHtml(t, t.paidPlus(n, year ? t.months12 : t.months6)) +
+      (yearly ? '<span class="price-old">' + full + '</span>' : '') + '</div>' +
+      '<div class="price-per"><div>' + (yearly ? x.perY : x.perM) + '</div>' +
+      (yearly ? '<div>' + x.eq + ' <b>' + fmt(price / 12) + '</b> ' + t.perMonth + '</div>' : '') + '</div>' +
+      (yearly ? '<span class="save-chip">' + x.save(saving, Math.round(saving / full * 100)) + '</span>' : '') + '</div>' +
+      '<a class="cta' + (rec ? '' : ' alt') + '" target="_blank" rel="noopener" href="' + waUrl(x.msg(k, yearly)) + '">' + WA + '<span>' + x.cta + '</span></a>' +
+      '<p class="trial-note">' + x.note + '</p>' +
+      featuresHtml(t, [t.allFree].concat(x.plus(k)), t.feats, t.featPaid) +
       '</div>';
   }
 
@@ -456,7 +461,7 @@
       '<div class="price-per"><div>' + P.price + '</div><div>' + P.per + '</div></div></div>' +
       '<a class="cta alt" target="_blank" rel="noopener" href="' + href + '">' + (STORE_URL ? '' : WA) + '<span>' + (STORE_URL ? P.ctaStore : P.cta) + '</span></a>' +
       '<p class="trial-note">' + P.note + '</p>' +
-      featuresHtml(t, t.trialPlus) +
+      featuresHtml(t, t.trialPlus, t.freeFeats, t.featFree) +
       '</div>';
   }
 
@@ -475,15 +480,15 @@
 
     var seg = document.getElementById('devs');
     seg.textContent = '';
-    [1, 2, 3, 4, 5].forEach(function (n) {
+    [false, true].forEach(function (y) {
       var b = document.createElement('button');
-      b.type = 'button'; b.textContent = t.dev(n);
-      b.setAttribute('aria-pressed', n === devices ? 'true' : 'false');
-      b.addEventListener('click', function () { devices = n; render(); });
+      b.type = 'button'; b.textContent = y ? X[lang].yr : X[lang].mo;
+      b.setAttribute('aria-pressed', y === yearly ? 'true' : 'false');
+      b.addEventListener('click', function () { yearly = y; render(); });
       seg.appendChild(b);
     });
 
-    document.getElementById('plans').innerHTML = trialCard(t) + paidCard(t, 6) + paidCard(t, 12);
+    document.getElementById('plans').innerHTML = trialCard(t) + paidCard(t, 'b') + paidCard(t, 'p');
 
     document.getElementById('why').innerHTML = t.why.map(function (w) {
       return '<div class="card"><div class="plan-ico">' + w[0] + '</div><h3>' + w[1] + '</h3><p>' + w[2] + '</p></div>';
