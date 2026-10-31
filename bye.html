@@ -49,6 +49,8 @@
   .reasons label:hover{ border-color:var(--accent); }
   .reasons input{ accent-color:var(--accent); width:18px; height:18px; flex:none; margin:0; }
   .reasons label:has(input:checked){ border-color:var(--accent); background:var(--accent-bg); }
+  .subs{ margin-top:-6px; padding-inline-start:12px; border-inline-start:3px solid var(--accent-bg); }
+  .subs legend{ font-weight:600; font-size:14px; padding:0; margin-bottom:8px; }
   label.field{ display:block; font-weight:600; font-size:14px; margin-bottom:8px; }
   textarea{
     width:100%; min-height:96px; resize:vertical; padding:12px 14px; border:1px solid var(--border); border-radius:12px;
@@ -88,7 +90,7 @@
         <div class="brand-sub" data-t="brandSub"></div>
       </div>
     </div>
-    <select id="lang-btn" class="lang-btn" aria-label="Language"><option value="ar">ع</option><option value="en">EN</option><option value="es">ES</option></select>
+    <select id="lang-btn" class="lang-btn" aria-label="Language"><option value="ar">ع</option><option value="en">EN</option><option value="es">ES</option><option value="fr">FR</option><option value="tr">TR</option><option value="pt">PT</option><option value="id">ID</option><option value="de">DE</option><option value="hi">हिं</option><option value="zh">中文</option><option value="ur">اردو</option></select>
   </header>
 
   <main>
@@ -96,6 +98,7 @@
       <h1 data-t="h1"></h1>
       <p class="lead" data-t="lead"></p>
       <fieldset class="reasons" id="reasons"><legend hidden data-t="reasonLabel"></legend></fieldset>
+      <fieldset class="reasons subs" id="subs" hidden><legend data-t="subLabel"></legend></fieldset>
       <label class="field" for="details" data-t="detailsLabel"></label>
       <textarea id="details" maxlength="1000" data-ph="detailsPh"></textarea>
       <div class="count"><span id="count">0</span> / 1000</div>
@@ -144,6 +147,9 @@
         no_whatsapp_web: 'لم أعد أستخدم واتساب ويب',
         other: 'سبب آخر'
       },
+      subLabel: "ما الذي حدث بالضبط؟ (اختياري)",
+      subs: {"services_down": "برنامج الخدمات لم يكن يعمل", "printer_silent": "البرنامج يعمل لكن الطابعة لم تطبع", "images_blurry": "الصور لم تظهر أو ظهرت ضبابية", "wrong_output": "الملف طُبع بشكل غير صحيح"},
+      detailsPhErr: "مثلاً: رسالة الخطأ التي ظهرت أو ما حاولت طباعته",
       detailsLabel: 'أخبرنا أكثر (اختياري)', detailsPh: 'مثلاً: ما المشكلة التي واجهتها أو المزايا التي تنقصك؟',
       send: 'إرسال الملاحظات', skip: 'لا، شكراً',
       privacy: 'مجهول بالكامل: لا نرسل رقمك ولا كود اشتراكك ولا بصمة جهازك، فقط ما تكتبه هنا ورقم الإصدار.',
@@ -169,6 +175,9 @@
         no_whatsapp_web: 'I no longer use WhatsApp Web',
         other: 'Another reason'
       },
+      subLabel: "What exactly happened? (optional)",
+      subs: {"services_down": "The printing service program was not running", "printer_silent": "The program ran but the printer did not print", "images_blurry": "Images did not appear or looked blurry", "wrong_output": "The file printed incorrectly"},
+      detailsPhErr: "For example: the error message you saw or what you tried to print",
       detailsLabel: 'Tell us more (optional)', detailsPh: 'For example: what problem did you face, or which features are missing?',
       send: 'Send feedback', skip: 'No thanks',
       privacy: 'Fully anonymous: we do not send your number, subscription code or device fingerprint, only what you type here and the version number.',
@@ -194,6 +203,9 @@
         no_whatsapp_web: 'Ya no uso WhatsApp Web',
         other: 'Otro motivo'
       },
+      subLabel: "¿Qué pasó exactamente? (opcional)",
+      subs: {"services_down": "El programa de servicios no estaba en funcionamiento", "printer_silent": "El programa funcionaba pero la impresora no imprimió", "images_blurry": "Las imágenes no aparecían o se veían borrosas", "wrong_output": "El archivo se imprimió de forma incorrecta"},
+      detailsPhErr: "Por ejemplo: el mensaje de error que viste o lo que intentaste imprimir",
       detailsLabel: 'Cuéntanos más (opcional)', detailsPh: 'Por ejemplo: ¿qué problema tuviste o qué funciones te faltan?',
       send: 'Enviar comentarios', skip: 'No, gracias',
       privacy: 'Totalmente anónimo: no enviamos tu número, tu código de suscripción ni la huella de tu dispositivo, solo lo que escribes aquí y el número de versión.',
@@ -201,9 +213,306 @@
       thanksH: 'Gracias', thanksSent: 'Tus comentarios llegaron al equipo. Si algún día vuelves a necesitar la extensión, siempre serás bienvenido.', thanksSkip: 'No pasa nada. Si algún día vuelves a necesitar la extensión, siempre serás bienvenido.',
       reinstall: 'Reinstalar la extensión', contact: 'Contáctanos por WhatsApp',
       waMsg: 'Hola, desinstalé el Asistente de Impresión Inteligente y me gustaría recibir ayuda.'
+    },
+    fr: {
+      "title": "Nous sommes désolés de vous voir partir - Assistant d'impression intelligent",
+      "brand": "Assistant d'impression intelligent",
+      "brandSub": "Imprimez depuis WhatsApp Web",
+      "h1": "Nous sommes désolés de vous voir partir",
+      "lead": "L'Assistant d'impression intelligent a été supprimé de votre navigateur. Avant de partir, une question rapide nous aide à améliorer l'extension.",
+      "reasonLabel": "Motif de la désinstallation",
+      "reasons": {
+        "not_working": "L'impression n'a pas fonctionné ou j'ai eu des erreurs",
+        "install_hard": "L'installation ou le programme de services était difficile",
+        "missing_features": "Il manque des fonctions dont j'ai besoin",
+        "price": "Le prix est élevé ou je ne veux pas m'abonner",
+        "trial_ended": "L'essai gratuit est terminé",
+        "alternative": "J'ai trouvé une meilleure alternative",
+        "temporary": "Je n'en avais besoin que temporairement",
+        "no_whatsapp_web": "Je n'utilise plus WhatsApp Web",
+        "other": "Autre motif"
+      },
+      subLabel: "Que s'est-il passé exactement ? (facultatif)",
+      subs: {"services_down": "Le programme de services ne fonctionnait pas", "printer_silent": "Le programme fonctionnait mais l'imprimante n'a pas imprimé", "images_blurry": "Les images ne s'affichaient pas ou étaient floues", "wrong_output": "Le fichier s'est imprimé de façon incorrecte"},
+      detailsPhErr: "Par exemple : le message d'erreur affiché ou ce que vous avez essayé d'imprimer",
+      "detailsLabel": "Dites-nous en plus (facultatif)",
+      "detailsPh": "Par exemple : quel problème avez-vous rencontré, ou quelles fonctions manquent ?",
+      "send": "Envoyer mon avis",
+      "skip": "Non merci",
+      "privacy": "Totalement anonyme : nous n'envoyons ni votre numéro, ni votre code d'abonnement, ni l'empreinte de votre appareil, seulement ce que vous écrivez ici et le numéro de version.",
+      "errPick": "Choisissez d'abord un motif.",
+      "errFail": "Envoi impossible, réessayez dans un instant.",
+      "errRate": "Vous avez envoyé plusieurs fois, réessayez plus tard.",
+      "sending": "Envoi en cours…",
+      "thanksH": "Merci",
+      "thanksSent": "Votre avis est bien parvenu à l'équipe. Si vous avez de nouveau besoin de l'extension, vous serez toujours le bienvenu.",
+      "thanksSkip": "Pas de souci. Si vous avez de nouveau besoin de l'extension, vous serez toujours le bienvenu.",
+      "reinstall": "Réinstaller l'extension",
+      "contact": "Nous contacter sur WhatsApp",
+      "waMsg": "Bonjour, j'ai désinstallé l'Assistant d'impression intelligent et j'aimerais de l'aide."
+    },
+    tr: {
+      "title": "Gittiğinize üzüldük - Akıllı Yazdırma Asistanı",
+      "brand": "Akıllı Yazdırma Asistanı",
+      "brandSub": "WhatsApp Web'den yazdırın",
+      "h1": "Gittiğinize üzüldük",
+      "lead": "Akıllı Yazdırma Asistanı tarayıcınızdan kaldırıldı. Gitmeden önce kısa bir soru eklentiyi geliştirmemize yardımcı olur.",
+      "reasonLabel": "Kaldırma nedeni",
+      "reasons": {
+        "not_working": "Yazdırma çalışmadı veya hata aldım",
+        "install_hard": "Kurulum veya hizmet programı zordu",
+        "missing_features": "İhtiyacım olan özellikler eksik",
+        "price": "Fiyat yüksek veya abone olmak istemiyorum",
+        "trial_ended": "Ücretsiz deneme bitti",
+        "alternative": "Daha iyi bir alternatif buldum",
+        "temporary": "Yalnızca geçici olarak ihtiyacım vardı",
+        "no_whatsapp_web": "Artık WhatsApp Web kullanmıyorum",
+        "other": "Başka bir neden"
+      },
+      subLabel: "Tam olarak ne oldu? (isteğe bağlı)",
+      subs: {"services_down": "Hizmetler programı çalışmıyordu", "printer_silent": "Program çalışıyordu ama yazıcı yazdırmadı", "images_blurry": "Görseller görünmedi veya bulanık göründü", "wrong_output": "Dosya yanlış yazdırıldı"},
+      detailsPhErr: "Örneğin: gördüğünüz hata mesajı veya yazdırmaya çalıştığınız dosya",
+      "detailsLabel": "Daha fazlasını anlatın (isteğe bağlı)",
+      "detailsPh": "Örneğin: hangi sorunla karşılaştınız veya hangi özellikler eksik?",
+      "send": "Geri bildirim gönder",
+      "skip": "Hayır, teşekkürler",
+      "privacy": "Tamamen anonim: numaranızı, abonelik kodunuzu veya cihaz parmak izinizi göndermiyoruz; yalnızca buraya yazdıklarınızı ve sürüm numarasını.",
+      "errPick": "Lütfen önce bir neden seçin.",
+      "errFail": "Gönderilemedi, birazdan tekrar deneyin.",
+      "errRate": "Birkaç kez gönderdiniz, daha sonra tekrar deneyin.",
+      "sending": "Gönderiliyor…",
+      "thanksH": "Teşekkürler",
+      "thanksSent": "Geri bildiriminiz ekibe ulaştı. Eklentiye yeniden ihtiyaç duyarsanız her zaman bekleriz.",
+      "thanksSkip": "Sorun değil. Eklentiye yeniden ihtiyaç duyarsanız her zaman bekleriz.",
+      "reinstall": "Eklentiyi yeniden kur",
+      "contact": "WhatsApp'tan bize ulaşın",
+      "waMsg": "Merhaba, Akıllı Yazdırma Asistanı'nı kaldırdım ve yardım almak istiyorum."
+    },
+    pt: {
+      "title": "Sentimos sua partida - Assistente de Impressão Inteligente",
+      "brand": "Assistente de Impressão Inteligente",
+      "brandSub": "Imprima pelo WhatsApp Web",
+      "h1": "Sentimos sua partida",
+      "lead": "O Assistente de Impressão Inteligente foi removido do seu navegador. Antes de sair, uma pergunta rápida nos ajuda a melhorar a extensão.",
+      "reasonLabel": "Motivo da desinstalação",
+      "reasons": {
+        "not_working": "A impressão não funcionou ou tive erros",
+        "install_hard": "A instalação ou o programa de serviços foi difícil",
+        "missing_features": "Faltam recursos de que preciso",
+        "price": "O preço é alto ou não quero assinar",
+        "trial_ended": "O teste gratuito acabou",
+        "alternative": "Encontrei uma alternativa melhor",
+        "temporary": "Eu só precisava temporariamente",
+        "no_whatsapp_web": "Não uso mais o WhatsApp Web",
+        "other": "Outro motivo"
+      },
+      subLabel: "O que aconteceu exatamente? (opcional)",
+      subs: {"services_down": "O programa de serviços não estava em execução", "printer_silent": "O programa funcionava, mas a impressora não imprimiu", "images_blurry": "As imagens não apareceram ou ficaram desfocadas", "wrong_output": "O arquivo foi impresso de forma incorreta"},
+      detailsPhErr: "Por exemplo: a mensagem de erro exibida ou o que você tentou imprimir",
+      "detailsLabel": "Conte-nos mais (opcional)",
+      "detailsPh": "Por exemplo: qual problema você teve ou quais recursos estão faltando?",
+      "send": "Enviar feedback",
+      "skip": "Não, obrigado",
+      "privacy": "Totalmente anônimo: não enviamos seu número, seu código de assinatura nem a impressão digital do seu dispositivo, apenas o que você escrever aqui e o número da versão.",
+      "errPick": "Escolha primeiro um motivo.",
+      "errFail": "Não foi possível enviar, tente novamente em instantes.",
+      "errRate": "Você enviou várias vezes, tente mais tarde.",
+      "sending": "Enviando…",
+      "thanksH": "Obrigado",
+      "thanksSent": "Seu feedback chegou à equipe. Se um dia precisar da extensão de novo, será sempre bem-vindo.",
+      "thanksSkip": "Sem problemas. Se um dia precisar da extensão de novo, será sempre bem-vindo.",
+      "reinstall": "Reinstalar a extensão",
+      "contact": "Fale conosco pelo WhatsApp",
+      "waMsg": "Olá, desinstalei o Assistente de Impressão Inteligente e gostaria de ajuda."
+    },
+    id: {
+      "title": "Kami sedih Anda pergi - Asisten Cetak Pintar",
+      "brand": "Asisten Cetak Pintar",
+      "brandSub": "Cetak dari WhatsApp Web",
+      "h1": "Kami sedih Anda pergi",
+      "lead": "Asisten Cetak Pintar telah dihapus dari peramban Anda. Sebelum pergi, satu pertanyaan singkat membantu kami memperbaiki ekstensi.",
+      "reasonLabel": "Alasan mencopot",
+      "reasons": {
+        "not_working": "Pencetakan tidak berfungsi atau saya mendapat kesalahan",
+        "install_hard": "Instalasi atau program layanan sulit",
+        "missing_features": "Fitur yang saya butuhkan tidak ada",
+        "price": "Harganya mahal atau saya tidak ingin berlangganan",
+        "trial_ended": "Uji coba gratis berakhir",
+        "alternative": "Saya menemukan alternatif yang lebih baik",
+        "temporary": "Saya hanya membutuhkannya sementara",
+        "no_whatsapp_web": "Saya tidak lagi memakai WhatsApp Web",
+        "other": "Alasan lain"
+      },
+      subLabel: "Apa yang sebenarnya terjadi? (opsional)",
+      subs: {"services_down": "Program layanan tidak berjalan", "printer_silent": "Program berjalan tetapi printer tidak mencetak", "images_blurry": "Gambar tidak muncul atau tampak buram", "wrong_output": "File tercetak dengan tidak benar"},
+      detailsPhErr: "Misalnya: pesan kesalahan yang muncul atau apa yang Anda coba cetak",
+      "detailsLabel": "Ceritakan lebih lanjut (opsional)",
+      "detailsPh": "Misalnya: masalah apa yang Anda alami, atau fitur apa yang kurang?",
+      "send": "Kirim masukan",
+      "skip": "Tidak, terima kasih",
+      "privacy": "Sepenuhnya anonim: kami tidak mengirim nomor, kode langganan, atau sidik jari perangkat Anda, hanya yang Anda tulis di sini dan nomor versi.",
+      "errPick": "Pilih alasan terlebih dahulu.",
+      "errFail": "Tidak dapat mengirim, coba lagi sebentar lagi.",
+      "errRate": "Anda sudah mengirim beberapa kali, coba lagi nanti.",
+      "sending": "Mengirim…",
+      "thanksH": "Terima kasih",
+      "thanksSent": "Masukan Anda sudah sampai ke tim. Jika suatu saat Anda membutuhkan ekstensi lagi, Anda selalu diterima.",
+      "thanksSkip": "Tidak masalah. Jika suatu saat Anda membutuhkan ekstensi lagi, Anda selalu diterima.",
+      "reinstall": "Pasang ulang ekstensi",
+      "contact": "Hubungi kami lewat WhatsApp",
+      "waMsg": "Halo, saya mencopot Asisten Cetak Pintar dan ingin meminta bantuan."
+    },
+    de: {
+      "title": "Schade, dass Sie gehen - Intelligenter Druckassistent",
+      "brand": "Intelligenter Druckassistent",
+      "brandSub": "Drucken über WhatsApp Web",
+      "h1": "Schade, dass Sie gehen",
+      "lead": "Der Intelligente Druckassistent wurde aus Ihrem Browser entfernt. Bevor Sie gehen, hilft uns eine kurze Frage, die Erweiterung zu verbessern.",
+      "reasonLabel": "Grund der Deinstallation",
+      "reasons": {
+        "not_working": "Das Drucken hat nicht funktioniert oder ich hatte Fehler",
+        "install_hard": "Die Installation oder das Dienstprogramm war schwierig",
+        "missing_features": "Mir fehlen Funktionen, die ich brauche",
+        "price": "Der Preis ist hoch oder ich möchte nicht abonnieren",
+        "trial_ended": "Die kostenlose Testphase ist abgelaufen",
+        "alternative": "Ich habe eine bessere Alternative gefunden",
+        "temporary": "Ich brauchte sie nur vorübergehend",
+        "no_whatsapp_web": "Ich nutze WhatsApp Web nicht mehr",
+        "other": "Anderer Grund"
+      },
+      subLabel: "Was genau ist passiert? (optional)",
+      subs: {"services_down": "Das Dienstprogramm lief nicht", "printer_silent": "Das Programm lief, aber der Drucker hat nicht gedruckt", "images_blurry": "Bilder wurden nicht angezeigt oder waren unscharf", "wrong_output": "Die Datei wurde falsch gedruckt"},
+      detailsPhErr: "Zum Beispiel: die angezeigte Fehlermeldung oder was Sie drucken wollten",
+      "detailsLabel": "Erzählen Sie uns mehr (optional)",
+      "detailsPh": "Zum Beispiel: Welches Problem hatten Sie, oder welche Funktionen fehlen?",
+      "send": "Feedback senden",
+      "skip": "Nein, danke",
+      "privacy": "Völlig anonym: Wir senden weder Ihre Nummer noch Ihren Abonnementcode oder den Fingerabdruck Ihres Geräts, nur das, was Sie hier eingeben, und die Versionsnummer.",
+      "errPick": "Bitte wählen Sie zuerst einen Grund.",
+      "errFail": "Senden nicht möglich, versuchen Sie es gleich noch einmal.",
+      "errRate": "Sie haben mehrfach gesendet, versuchen Sie es später erneut.",
+      "sending": "Wird gesendet…",
+      "thanksH": "Danke",
+      "thanksSent": "Ihr Feedback ist beim Team angekommen. Falls Sie die Erweiterung wieder brauchen, sind Sie jederzeit willkommen.",
+      "thanksSkip": "Kein Problem. Falls Sie die Erweiterung wieder brauchen, sind Sie jederzeit willkommen.",
+      "reinstall": "Erweiterung neu installieren",
+      "contact": "Kontakt über WhatsApp",
+      "waMsg": "Hallo, ich habe den Intelligenten Druckassistenten deinstalliert und hätte gern Hilfe."
+    },
+    hi: {
+      "title": "आपके जाने का हमें खेद है - स्मार्ट प्रिंट सहायक",
+      "brand": "स्मार्ट प्रिंट सहायक",
+      "brandSub": "WhatsApp Web से प्रिंट करें",
+      "h1": "आपके जाने का हमें खेद है",
+      "lead": "स्मार्ट प्रिंट सहायक आपके ब्राउज़र से हटा दिया गया है। जाने से पहले, एक छोटा सवाल एक्सटेंशन को बेहतर बनाने में हमारी मदद करता है।",
+      "reasonLabel": "अनइंस्टॉल का कारण",
+      "reasons": {
+        "not_working": "प्रिंटिंग काम नहीं की या त्रुटियाँ आईं",
+        "install_hard": "इंस्टॉलेशन या सेवा प्रोग्राम कठिन था",
+        "missing_features": "मुझे चाहिए वाली सुविधाएँ नहीं हैं",
+        "price": "कीमत ज़्यादा है या मैं सदस्यता नहीं लेना चाहता/चाहती",
+        "trial_ended": "निःशुल्क परीक्षण खत्म हो गया",
+        "alternative": "मुझे बेहतर विकल्प मिल गया",
+        "temporary": "मुझे इसकी केवल अस्थायी ज़रूरत थी",
+        "no_whatsapp_web": "मैं अब WhatsApp Web इस्तेमाल नहीं करता/करती",
+        "other": "कोई और कारण"
+      },
+      subLabel: "ठीक-ठीक क्या हुआ? (वैकल्पिक)",
+      subs: {"services_down": "सर्विसेज़ प्रोग्राम चालू नहीं था", "printer_silent": "प्रोग्राम चल रहा था लेकिन प्रिंटर ने प्रिंट नहीं किया", "images_blurry": "तस्वीरें नहीं दिखीं या धुंधली दिखीं", "wrong_output": "फ़ाइल गलत तरीके से प्रिंट हुई"},
+      detailsPhErr: "उदाहरण: जो त्रुटि संदेश दिखा या आपने क्या प्रिंट करने की कोशिश की",
+      "detailsLabel": "हमें और बताएँ (वैकल्पिक)",
+      "detailsPh": "उदाहरण: आपको क्या समस्या आई, या कौन सी सुविधाएँ कम हैं?",
+      "send": "प्रतिक्रिया भेजें",
+      "skip": "नहीं, धन्यवाद",
+      "privacy": "पूरी तरह गुमनाम: हम आपका नंबर, सदस्यता कोड या डिवाइस फ़िंगरप्रिंट नहीं भेजते, केवल वही जो आप यहाँ लिखते हैं और संस्करण संख्या।",
+      "errPick": "पहले कोई कारण चुनें।",
+      "errFail": "भेजा नहीं जा सका, थोड़ी देर में दोबारा प्रयास करें।",
+      "errRate": "आपने कई बार भेजा है, बाद में प्रयास करें।",
+      "sending": "भेजा जा रहा है…",
+      "thanksH": "धन्यवाद",
+      "thanksSent": "आपकी प्रतिक्रिया टीम तक पहुँच गई। यदि कभी आपको फिर एक्सटेंशन की ज़रूरत पड़े तो आपका हमेशा स्वागत है।",
+      "thanksSkip": "कोई बात नहीं। यदि कभी आपको फिर एक्सटेंशन की ज़रूरत पड़े तो आपका हमेशा स्वागत है।",
+      "reinstall": "एक्सटेंशन दोबारा इंस्टॉल करें",
+      "contact": "WhatsApp पर संपर्क करें",
+      "waMsg": "नमस्ते, मैंने स्मार्ट प्रिंट सहायक अनइंस्टॉल किया है और कुछ मदद चाहता/चाहती हूँ।"
+    },
+    zh: {
+      "title": "很遗憾您要离开 - 智能打印助手",
+      "brand": "智能打印助手",
+      "brandSub": "从 WhatsApp Web 打印",
+      "h1": "很遗憾您要离开",
+      "lead": "智能打印助手已从您的浏览器中移除。离开之前，回答一个简单的问题可以帮助我们改进扩展。",
+      "reasonLabel": "卸载原因",
+      "reasons": {
+        "not_working": "打印无法使用或出现错误",
+        "install_hard": "安装或服务程序太难用",
+        "missing_features": "缺少我需要的功能",
+        "price": "价格太高或我不想订阅",
+        "trial_ended": "免费试用已结束",
+        "alternative": "我找到了更好的替代品",
+        "temporary": "我只是临时需要",
+        "no_whatsapp_web": "我不再使用 WhatsApp Web",
+        "other": "其他原因"
+      },
+      subLabel: "具体发生了什么？（选填）",
+      subs: {"services_down": "服务程序没有运行", "printer_silent": "程序在运行，但打印机没有打印", "images_blurry": "图片没有显示或显示模糊", "wrong_output": "文件打印不正确"},
+      detailsPhErr: "例如：您看到的错误信息，或您想打印的内容",
+      "detailsLabel": "告诉我们更多（可选）",
+      "detailsPh": "例如：您遇到了什么问题，或缺少哪些功能？",
+      "send": "提交反馈",
+      "skip": "不用了",
+      "privacy": "完全匿名：我们不会发送您的号码、订阅码或设备指纹，只发送您在此填写的内容和版本号。",
+      "errPick": "请先选择一个原因。",
+      "errFail": "无法发送，请稍后重试。",
+      "errRate": "您已多次发送，请稍后再试。",
+      "sending": "发送中…",
+      "thanksH": "谢谢",
+      "thanksSent": "您的反馈已送达团队。如果将来您再次需要这个扩展，随时欢迎回来。",
+      "thanksSkip": "没关系。如果将来您再次需要这个扩展，随时欢迎回来。",
+      "reinstall": "重新安装扩展",
+      "contact": "通过 WhatsApp 联系我们",
+      "waMsg": "你好，我卸载了智能打印助手，想获得一些帮助。"
+    },
+    ur: {
+      "title": "آپ کے جانے کا ہمیں افسوس ہے - اسمارٹ پرنٹ اسسٹنٹ",
+      "brand": "اسمارٹ پرنٹ اسسٹنٹ",
+      "brandSub": "واٹس ایپ ویب سے پرنٹ کریں",
+      "h1": "آپ کے جانے کا ہمیں افسوس ہے",
+      "lead": "اسمارٹ پرنٹ اسسٹنٹ آپ کے براؤزر سے ہٹا دیا گیا ہے۔ جانے سے پہلے ایک مختصر سوال ایکسٹینشن بہتر بنانے میں ہماری مدد کرتا ہے۔",
+      "reasonLabel": "ان انسٹال کرنے کی وجہ",
+      "reasons": {
+        "not_working": "پرنٹنگ کام نہیں کی یا خرابیاں آئیں",
+        "install_hard": "انسٹالیشن یا سروس پروگرام مشکل تھا",
+        "missing_features": "مجھے درکار خصوصیات موجود نہیں",
+        "price": "قیمت زیادہ ہے یا میں سبسکرائب نہیں کرنا چاہتا/چاہتی",
+        "trial_ended": "مفت آزمائش ختم ہو گئی",
+        "alternative": "مجھے بہتر متبادل مل گیا",
+        "temporary": "مجھے صرف وقتی طور پر اس کی ضرورت تھی",
+        "no_whatsapp_web": "میں اب واٹس ایپ ویب استعمال نہیں کرتا/کرتی",
+        "other": "کوئی اور وجہ"
+      },
+      subLabel: "ٹھیک ٹھیک کیا ہوا؟ (اختیاری)",
+      subs: {"services_down": "سروسز پروگرام نہیں چل رہا تھا", "printer_silent": "پروگرام چل رہا تھا لیکن پرنٹر نے پرنٹ نہیں کیا", "images_blurry": "تصاویر نظر نہیں آئیں یا دھندلی تھیں", "wrong_output": "فائل غلط پرنٹ ہوئی"},
+      detailsPhErr: "مثال: جو غلطی کا پیغام نظر آیا یا آپ نے کیا پرنٹ کرنے کی کوشش کی",
+      "detailsLabel": "ہمیں مزید بتائیں (اختیاری)",
+      "detailsPh": "مثلاً: آپ کو کیا مسئلہ پیش آیا، یا کون سی خصوصیات کم ہیں؟",
+      "send": "رائے بھیجیں",
+      "skip": "نہیں، شکریہ",
+      "privacy": "مکمل گمنام: ہم آپ کا نمبر، سبسکرپشن کوڈ یا آلے کا فنگر پرنٹ نہیں بھیجتے، صرف وہی جو آپ یہاں لکھتے ہیں اور ورژن نمبر۔",
+      "errPick": "پہلے کوئی وجہ منتخب کریں۔",
+      "errFail": "بھیجا نہیں جا سکا، تھوڑی دیر میں دوبارہ کوشش کریں۔",
+      "errRate": "آپ نے کئی بار بھیجا ہے، بعد میں کوشش کریں۔",
+      "sending": "بھیجا جا رہا ہے…",
+      "thanksH": "شکریہ",
+      "thanksSent": "آپ کی رائے ٹیم تک پہنچ گئی۔ اگر کبھی آپ کو دوبارہ ایکسٹینشن کی ضرورت پڑے تو آپ کا ہمیشہ خیرمقدم ہے۔",
+      "thanksSkip": "کوئی بات نہیں۔ اگر کبھی آپ کو دوبارہ ایکسٹینشن کی ضرورت پڑے تو آپ کا ہمیشہ خیرمقدم ہے۔",
+      "reinstall": "ایکسٹینشن دوبارہ انسٹال کریں",
+      "contact": "واٹس ایپ پر رابطہ کریں",
+      "waMsg": "السلام علیکم، میں نے اسمارٹ پرنٹ اسسٹنٹ ان انسٹال کر دیا ہے اور کچھ مدد چاہتا/چاہتی ہوں۔"
     }
   };
-  var LANGS = ['ar', 'en', 'es'];
+  var LANGS = ['ar', 'en', 'es', 'fr', 'tr', 'pt', 'id', 'de', 'hi', 'zh', 'ur'];
+  var RTL = { ar: 1, ur: 1 };
 
   var KEY = 'privacy_lang';
   var q = new URLSearchParams(location.search);
@@ -215,7 +524,8 @@
     if (LANGS.indexOf(l) >= 0) return l;
     try { var s = localStorage.getItem(KEY); if (LANGS.indexOf(s) >= 0) return s; } catch (e) {}
     var nl = navigator.language || '';
-    return /^ar\b/i.test(nl) ? 'ar' : /^es\b/i.test(nl) ? 'es' : 'en';
+    for (var i = 0; i < LANGS.length; i++) if (new RegExp('^' + LANGS[i] + '\\b', 'i').test(nl)) return LANGS[i];
+    return 'en';
   }
   function $(id) { return document.getElementById(id); }
   function chosen() { var r = document.querySelector('input[name="reason"]:checked'); return r ? r.value : ''; }
@@ -223,11 +533,11 @@
   function render() {
     var t = T[lang], ar = lang === 'ar', keep = chosen();
     document.documentElement.lang = lang;
-    document.documentElement.dir = ar ? 'rtl' : 'ltr';
+    document.documentElement.dir = RTL[lang] ? 'rtl' : 'ltr';
     document.title = t.title;
     var els = document.querySelectorAll('[data-t]');
     for (var i = 0; i < els.length; i++) els[i].textContent = t[els[i].getAttribute('data-t')];
-    $('details').placeholder = t.detailsPh;
+    $('details').placeholder = keep === 'not_working' ? t.detailsPhErr : t.detailsPh;
     var btn = $('lang-btn');
     btn.value = lang;
     btn.className = 'lang-btn' + (ar ? ' to-ar' : '');
@@ -240,19 +550,40 @@
       var label = document.createElement('label');
       var input = document.createElement('input');
       input.type = 'radio'; input.name = 'reason'; input.value = k; input.checked = k === keep;
-      input.addEventListener('change', function () { $('err').textContent = ''; });
+      input.addEventListener('change', function () { $('err').textContent = ''; renderSubs(T[lang], k); $('details').placeholder = k === 'not_working' ? T[lang].detailsPhErr : T[lang].detailsPh; });
       var span = document.createElement('span');
       span.textContent = t.reasons[k];
       label.appendChild(input); label.appendChild(span);
       box.appendChild(label);
     });
 
+    renderSubs(t, keep);
     $('thanks-p').textContent = sent ? t.thanksSent : t.thanksSkip;
     var re = $('reinstall');
     re.hidden = !STORE_URL;
     if (STORE_URL) re.href = STORE_URL + '?hl=' + lang;
     $('contact').href = 'https://wa.me/' + PHONE + '?text=' + encodeURIComponent(t.waMsg);
     if (busy) $('send').textContent = t.sending;
+  }
+
+  // أسباب فرعية تظهر بعد اختيار «الطباعة لم تعمل» فقط (اختيارية؛ تُرسل رمزاً ثابتاً)
+  var SUBS = { not_working: ['services_down', 'printer_silent', 'images_blurry', 'wrong_output'] };
+  function chosenSub() { var r = document.querySelector('input[name="sub"]:checked'); return r ? r.value : ''; }
+  function renderSubs(t, reason) {
+    var box = $('subs'), keep = chosenSub(), list = SUBS[reason] || [];
+    var legend = box.querySelector('legend');
+    box.textContent = '';
+    box.appendChild(legend);
+    box.hidden = !list.length;
+    list.forEach(function (k) {
+      var label = document.createElement('label');
+      var input = document.createElement('input');
+      input.type = 'radio'; input.name = 'sub'; input.value = k; input.checked = k === keep;
+      var span = document.createElement('span');
+      span.textContent = t.subs[k];
+      label.appendChild(input); label.appendChild(span);
+      box.appendChild(label);
+    });
   }
 
   function showThanks() {
@@ -276,7 +607,9 @@
     var t = T[lang], reason = chosen();
     if (!reason) { $('err').textContent = t.errPick; return; }
     busy = true; $('send').disabled = true; $('send').textContent = t.sending; $('err').textContent = '';
+    var sub = SUBS[reason] && SUBS[reason].indexOf(chosenSub()) >= 0 ? chosenSub() : '';
     var body = { reason: reason, details: $('details').value.trim().slice(0, 1000), lang: lang };
+    if (sub) body.sub = sub;
     if (version) body.v = version;
     fetch(API, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(body) })
       .then(function (r) { return r.json().catch(function () { return {}; }).then(function (j) { return { status: r.status, j: j }; }); })
